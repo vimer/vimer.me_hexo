@@ -7,14 +7,13 @@ tags: [Mac]
 
 这又让我想到win下的SecureCRT，只能曲线救国，也算Mac用户福音了, 下面是Mac下的SecureCRT破解步骤。
 
-到SecureCRT官网下载，亲测7.2.6有效：
-https://www.vandyke.com/download/prevreleases.html
+到[SecureCRT官网](https://www.vandyke.com/download/prevreleases.html)下载，亲测7.2.6有效：
 
 下载完后，先安装，然后把应用拖动到Application目录下。
 
-下载下面的这个脚本：
-https://github.com/InfoGeeker/securecrt_mac_crack/blob/master/securecrt_mac_crack.pl
+下载下面的这个[脚本](https://github.com/InfoGeeker/securecrt_mac_crack/blob/master/securecrt_mac_crack.pl)
 
+<!--more-->
 执行
 <pre>
 <code class="bash">
@@ -23,7 +22,6 @@ sudo perl ~/Downloads/securecrt_mac_crack.pl /Applications/SecureCRT.app/Content
 </pre>
 
 顺利的话，会报crack成功。
-<!--more-->
 
 Name:           bleedfly
 Company:        bleedfly.com

@@ -3,15 +3,15 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-site_title: Geeker's 博客 | 基础·极致·分享
+#site_title: Geeker's 博客 | 基础·极致·分享
 #title: Geeker's 博客 | 基础·极致·分享
 title: Vimer.Me
-pTitle: Geeker's 博客 |
-articleTitle: Geeker's 博客
+#pTitle: Geeker's 博客 |
+#articleTitle: Geeker's 博客
 sTitle: 基础·极致·分享
 #subtitle: — 技术、统计学、金融
 subtitle: 基础·极致·分享
-description: 因为创业我成为了一个多面手，全栈技术、产品、设计、还有运营。
+description: 行走于技术、创业之间
 keywords: 大数据存储 | 互联网产品 | 设计 | 互联网创业 | 架构之美 | Objective-C | swift | javascript | vim | Emacs | C | nodejs | 操作系统 | 数据结构和算法 | golang
 language: en
 author: vimer.me
@@ -66,7 +66,7 @@ tag: 1
 ## http://www.senchalabs.org/connect/logger.html
 port: 4000
 server_ip: localhost
-#server_ip: 192.168.1.24
+#server_ip: 192.168.1.54
 logger: true
 logger_format: dev
 
@@ -93,7 +93,7 @@ duoshuo_shortname: vimerme
 #theme: hexo-theme-aiki
 #theme: modernist
 #theme: tranquilpeak
-theme: huno
+theme: hvno
 #theme: next
 #theme: hexo-theme-mame
 #theme: landscape
