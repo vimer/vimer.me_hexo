@@ -1,4 +1,4 @@
-title: 基于VIM构建Web开发实时预览环境
+title: 基于Vim构建Web开发实时预览环境
 date: 2015-06-28 16:03:12
 tags: [vim]
 ---
