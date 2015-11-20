@@ -1,12 +1,14 @@
-title: 配合vim构建Web开发无需率刷新预览环境
+title: 基于VIM构建Web开发实时预览环境
 date: 2015-06-28 16:03:12
 tags: [vim]
 ---
-&nbsp;&nbsp;这个不是vim插件，但是对于一个偶尔或频繁开发H5的vimer又是个不错的选择。开发页面的时候，经常需要写段代码，比如布局，调整下css颜色，改完后需要再刷新下页面，才能看到效果，对于这么频繁的操作，想必大部分coder是不愿意的。这次带来的福音是grunt-contrib-connect和grunt-contrib-watch 这两个grunt插件，其中grunt-contrib-connect是起了个静态文件服务器的作用，而grunt-contrib-watch 用作监视文件的改变，然后执行指定的任务。
 
-&nbsp;&nbsp;继续自己写作风格，对于这种插件或者tip的东西直接上详细配置。首先在你需要监控的web根目录下面需要两个基本配置文件，一个是package.json这是用来配合npm来安装插件的。
+这个不是vim插件，但是对于一个偶尔或频繁开发H5的vimer又是个不错的选择。开发页面的时候，经常需要写段代码，比如布局，调整下css颜色，改完后需要再刷新下页面，才能看到效果，对于这么频繁的操作，想必大部分coder是不愿意的。这次带来的福音是grunt-contrib-connect和grunt-contrib-watch 这两个grunt插件，其中grunt-contrib-connect是起了个静态文件服务器的作用，而grunt-contrib-watch 用作监视文件的改变，然后执行指定的任务。
 
-```
+继续自己写作风格，对于这种插件或者tip的东西直接上详细配置。首先在你监控的web根目录下面置两个基本配置文件，一个是package.json这是用来配合npm来安装插件的。
+
+<pre>
+<code class="javascript">
 {
     "name": "web",
     "version": "0.0.1",
@@ -16,11 +18,14 @@ tags: [vim]
         "load-grunt-tasks": "~0.3.0"
     }
 }
-```
+</code>
+</pre>
+
 <!--more-->
 
 上面插件需要npm install来安装，另外一个配置文件是Gruntfile.js，这个在起grunt serve的时候需要加载.
-```
+<pre>
+<code class="javascript">
 module.exports = function(grunt){
     require('load-grunt-tasks')(grunt); //加载所有的任务
     //require('time-grunt')(grunt); 如果要使用 time-grunt 插件
@@ -60,7 +65,9 @@ module.exports = function(grunt){
         'watch'
     ]);
 }
-```
+</code>
+</pre>
 
 到现在为止，一个基本环境已经配置好了，通过运行grunt serve 就可以正常工作了。
 
+:)

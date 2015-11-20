@@ -13,7 +13,7 @@ sTitle: 基础·极致·分享
 subtitle: 基础·极致·分享
 description: 行走于技术、创业之间
 keywords: 大数据存储 | 互联网产品 | 设计 | 互联网创业 | 架构之美 | Objective-C | swift | javascript | vim | Emacs | C | nodejs | 操作系统 | 数据结构和算法 | golang
-language: en
+language: zh-CN
 author: vimer.me
 #email: emacs#vimer.org
 #language: zh-CN
@@ -36,7 +36,7 @@ public_dir: public
 # Writing
 new_post_name: :year/:month/:title.md # File name of new posts
 default_layout: post
-titlecase: true # Transform title into titlecase
+titlecase: false # Transform title into titlecase,若打开则会把标题iOS改成IOs
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
