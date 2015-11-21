@@ -3,15 +3,15 @@ date: 2015-05-10 12:24:29
 tags: [cpu, 性能]
 ---
 
-说起这个话题也挺有意思，上周五在公司分享的时候，在最末提到一个问题: 
+说起这个话题也挺有意思，上周五我在公司技术分享的时候，在最末提到一个问题: 
 
 为什么排序过的数据在遍历的时候速度更快 ?
 
 这里我拿出很久之前在Stack Overflow上火车在行驶的过程中的例子
 
-![](http://ww4.sinaimg.cn/large/744e593bgw1erz071og68j21520jp7b8.jpg)
-
 <!--more-->
+
+![](http://ww4.sinaimg.cn/large/744e593bgw1erz071og68j21520jp7b8.jpg)
 
 ![](http://ww2.sinaimg.cn/large/744e593bgw1erz08s1yjaj21540ih7bj.jpg)
 
