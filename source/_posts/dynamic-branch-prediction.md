@@ -1,6 +1,9 @@
 title: 动态分支预测
 date: 2015-05-10 12:24:29
 tags: [cpu, 性能]
+categories: tech
+v_category: 技术
+v_categoryLink: tech
 ---
 
 说起这个话题也挺有意思，上周五我在公司技术分享的时候，在最末提到一个问题: 
