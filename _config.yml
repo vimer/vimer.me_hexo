@@ -11,7 +11,8 @@ title: Vimer.Me
 sTitle: 基础·极致·分享
 #subtitle: — 技术、统计学、金融
 subtitle: 基础·极致·分享
-description: 行走于技术、创业之间
+#description: 行走于技术、创业之间
+description: Thinking in 编程，创业 in Action
 keywords: 大数据存储 | 互联网产品 | 设计 | 互联网创业 | 架构之美 | Objective-C | swift | javascript | vim | Emacs | C | nodejs | 操作系统 | 数据结构和算法 | golang
 language: zh-CN
 author: vimer.me
@@ -65,8 +66,8 @@ tag: 1
 ## You can customize the logger format as defined in
 ## http://www.senchalabs.org/connect/logger.html
 port: 4000
-server_ip: localhost
-#server_ip: 192.168.1.54
+#server_ip: localhost
+server_ip: 192.168.1.100
 #server_ip: 192.168.1.102
 logger: true
 logger_format: dev
@@ -75,7 +76,7 @@ logger_format: dev
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
-date_format: MMM D YYYY
+date_format: MMMD YYYY
 time_format: H:mm:ss
 
 # Pagination
