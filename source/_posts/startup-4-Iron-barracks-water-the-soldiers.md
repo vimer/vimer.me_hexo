@@ -1,4 +1,4 @@
-title: "疯狂创业路（四）：铁打的营盘，流水的'兵'"
+title: "创业路「四」：铁打的营盘，流水的'兵'"
 date: 2015-05-30 22:54:42
 categories: venture-road
 v_category: 疯狂创业路

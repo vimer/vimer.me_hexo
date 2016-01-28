@@ -1,4 +1,4 @@
-title: 疯狂创业路（六）：不合适就是不合适
+title: 创业路「六」：不合适就是不合适
 date: 2015-10-19 00:35:05
 categories: venture-road
 v_category: 疯狂创业路

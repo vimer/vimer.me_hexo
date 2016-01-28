@@ -1,4 +1,4 @@
-title: "疯狂创业路（一）：24pi - 团队合作才能大作, 这是种胸怀"
+title: "创业路「一」：24pi - 团队合作才能大作, 这是种胸怀"
 date: 2015-03-08 14:34:48
 categories: venture-road
 v_category: 疯狂创业路

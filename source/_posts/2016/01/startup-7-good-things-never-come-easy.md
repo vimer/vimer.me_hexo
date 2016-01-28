@@ -1,4 +1,4 @@
-title: "疯狂创业路（七）：好事多磨"
+title: 创业路「七」：好事多磨
 date: 2016-01-05 22:03:37
 categories: venture-road
 v_category: 疯狂创业路

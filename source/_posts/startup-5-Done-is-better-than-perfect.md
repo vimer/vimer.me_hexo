@@ -1,4 +1,4 @@
-title: 疯狂创业路（五）：Done is better than perfect
+title: 创业路「五」：Done is better than perfect
 date: 2015-09-14 20:24:54
 categories: venture-road
 v_category: 疯狂创业路

@@ -1,4 +1,4 @@
-title: 疯狂创业路（三）：从"速度与激情"看团队
+title: 创业路「三」：从"速度与激情"看团队
 date: 2015-04-19 23:24:04
 categories: venture-road
 v_category: 疯狂创业路
