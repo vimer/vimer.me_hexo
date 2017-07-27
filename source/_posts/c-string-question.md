@@ -1,6 +1,7 @@
 title: 由 C 中字符串比较引入的问题
 date: 2012-07-19 22:27:45
 tags: [C,字符串]
+category: 技术
 categories: tech
 v_category: 技术
 ---
