@@ -3,7 +3,6 @@ date: 2012-07-19 22:27:45
 tags: [C,字符串]
 categories: tech
 v_category: 技术
-v_categoryLink: tech
 ---
 一个同事在Project中写下如下错误代码(为了说明问题, 代码已经简写)
 
