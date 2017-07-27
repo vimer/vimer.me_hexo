@@ -1,8 +1,6 @@
 title: 创业路「九」：2015，这一年
 date: 2016-02-03 21:30:00
-categories: venture-road
-v_category: 疯狂创业路
-v_categoryLink: venture-road
+vcategory: 创业路
 ---
 2015年4月5日一口气读完《创业时，我们在知乎聊什么》，其中一段话是这样的：
 

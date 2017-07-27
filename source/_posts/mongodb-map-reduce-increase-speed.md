@@ -1,9 +1,7 @@
 title: MongoDB Map-Reduce 原理及提速
 date: 2015-01-18 12:07:42
 tags: [Map-Reduce, MongoDB]
-categories: tech
-v_category: 技术
-v_categoryLink: tech
+categories: 技术
 ---
 
 想要优化Map-reduce就要深入理解其原理.

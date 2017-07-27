@@ -1,9 +1,7 @@
 title: 创业路「八」：每个人都应该读读「重新定义团队：谷歌如何工作」
 date: 2016-01-23 23:50:33
 tags: [读书笔记]
-categories: venture-road
-v_category: 疯狂创业路
-v_categoryLink: venture-road
+categories: 创业路
 ---
 这本书看似是给公司的团队leader看的，其实内容对于每一位工作的人都是受益的，我想这本书标题应该改为《重新定义自己在工作中的角色》 更为合适。
 

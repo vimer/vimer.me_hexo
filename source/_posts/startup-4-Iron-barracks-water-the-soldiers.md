@@ -1,8 +1,6 @@
 title: "创业路「四」：铁打的营盘，流水的'兵'"
 date: 2015-05-30 22:54:42
-categories: venture-road
-v_category: 疯狂创业路
-v_categoryLink: venture-road
+categories: 创业路
 ---
 最近对这句话"铁打的营盘，流水的兵"理解越来越深刻，并不是因为这句话本身有多难理解，而是理解的角度会随着你正在做的事情越趋深刻。
 

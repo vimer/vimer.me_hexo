@@ -1,8 +1,6 @@
 title: 创业路「五」：Done is better than perfect
 date: 2015-09-14 20:24:54
-categories: venture-road
-v_category: 疯狂创业路
-v_categoryLink: venture-road
+categories: 创业路
 ---
 一直想写疯狂创业路的第五篇，却总是被各种琐事闯入，其实创业也就是这样，生活不可能是有条不紊的。
 

@@ -1,8 +1,6 @@
 title: "创业路「一」：24pi - 团队合作才能大作, 这是种胸怀"
 date: 2015-03-08 14:34:48
-categories: venture-road
-v_category: 疯狂创业路
-v_categoryLink: venture-road
+categories: 创业路
 ---
 
 直接从大三的创业项目过渡目前这个创业, 来的的确有点快, 本来想一一娓娓道来，但24pi这个产品牵动着核心成员及几十万粉丝的心，请允许我写个总结. 之前的创业产品和项目一些靠谱经验会慢慢补上.

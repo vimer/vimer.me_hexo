@@ -1,9 +1,7 @@
 title: MONGODB的BASIC INDEXES 和 COMPOUND INDEXES 研究
 date: 2012-07-12 01:18:41
 tags: [MongoDB,索引]
-categories: tech
-v_category: 技术
-v_categoryLink: tech
+categories: 技术
 ---
 前几天看到一个关于 MongoDB 深入索引的PPT
 

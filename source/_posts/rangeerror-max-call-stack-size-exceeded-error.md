@@ -1,9 +1,7 @@
 title: "Node.js异步回调池, Maximum call stack size exceeded error"
 date: 2015-01-17 16:12:17
 tags: [Node.js,异常]
-categories: tech
-v_category: 技术
-v_categoryLink: tech
+categories: 技术
 ---
 这种错误主要发生在js调用栈的限制,如下面递归调用的代码:
 

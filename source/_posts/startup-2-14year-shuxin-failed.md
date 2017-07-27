@@ -1,8 +1,6 @@
 title: "创业路「二」：14年末微传播失败--手写字祝福贺卡(书心)"
 date: 2015-04-11 13:52:48
-categories: venture-road
-v_category: 疯狂创业路
-v_categoryLink: venture-road
+categories: 创业路
 ---
 14年7月份左右，一个叫“围住神经猫”的H5的游戏在微信刷屏...此后, 这种传播方式被认为是'性价比最高'的方式.
 

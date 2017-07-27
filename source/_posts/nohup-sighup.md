@@ -1,9 +1,7 @@
 title: nohup和SIGHUP信号
 date: 2014-12-26 11:30:46
 tags: [nohup,SIGHUP]
-categories: tech
-v_category: 技术
-v_categoryLink: tech
+categories: 技术
 ---
 为什么这篇文章会提到nohup呢,主要还是最近在使用了一个叫maptail东西,它可以根据nginx的日志中IP来把IP和具体地址进行转换并显示在中国地图上.这样可以实时的查看接口的调用情况.
 

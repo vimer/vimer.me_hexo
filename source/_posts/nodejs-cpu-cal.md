@@ -1,9 +1,7 @@
 title: Node.js和cpu密集型计算
 date: 2014-12-27 19:35:46
 tags: [Node.js, cpu密集型计算]
-categories: tech
-v_category: 技术
-v_categoryLink: tech
+categories: 技术
 ---
 
 <pre>

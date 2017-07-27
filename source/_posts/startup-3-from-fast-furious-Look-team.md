@@ -1,8 +1,6 @@
 title: 创业路「三」：从"速度与激情"看团队
 date: 2015-04-19 23:24:04
-categories: venture-road
-v_category: 疯狂创业路
-v_categoryLink: venture-road
+categories: 创业路
 ---
 
 今晚是第二遍看速7，不仅被剧情吸引，更被这样的团队所吸引， 或许是因为看到团队成员中自己的影子。

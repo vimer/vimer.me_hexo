@@ -1,9 +1,7 @@
 title: Node.js原子性操作MongoDB
 date: 2014-12-21 20:47:06
 tags: [Node.js,MongoDB,原子性]
-categories: tech
-v_category: 技术
-v_categoryLink: tech
+categories: 技术
 ---
 
 假设基础数据为:
