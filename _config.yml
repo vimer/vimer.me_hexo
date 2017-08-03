@@ -20,6 +20,7 @@ author: vimer.me
 #email: emacs#vimer.org
 #language: zh-CN
 # 
+#logo: http://okf337562.bkt.clouddn.com/WechatIMG7.jpeg
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -67,8 +68,8 @@ tag: 1
 ## You can customize the logger format as defined in
 ## http://www.senchalabs.org/connect/logger.html
 port: 4000
-#server_ip: localhost
-server_ip: 192.168.1.54
+server_ip: localhost
+#server_ip: 192.168.1.54
 #server_ip: 192.168.1.68
 logger: true
 logger_format: dev
