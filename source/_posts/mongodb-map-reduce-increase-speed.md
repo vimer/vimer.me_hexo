@@ -5,12 +5,11 @@ categories: 技术
 ---
 
 想要优化Map-reduce就要深入理解其原理.
-
 Map-Reduce基本原理请见下图:
 
-<!--more-->
+![Map-Reduce基本原理](http://okf337562.bkt.clouddn.com/map-reduce.jpg)
 
-![Map-Reduce基本原理](http://ww4.sinaimg.cn/large/744e593bgw1eodjvvjkrij20r80jgdj7.jpg)
+<!--more-->
 
 整个数据处理流程可以参见官方上图,先对要进行处理的数据进行Query,然后针对Query的数据进行map,最后针对map的数据进行reduce.
 
