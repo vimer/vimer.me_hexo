@@ -47,8 +47,10 @@ post_asset_folder: false
 relative_link: true
 highlight:
   enable: true
-  line_number: false
-  tab_replace: 4
+  line_number: true
+  auto_detect: false
+  tab_replace:
+
 
 # Category & Tag
 #default_category: uncategorized
@@ -98,7 +100,7 @@ theme: hvno
 #theme: vno
 #theme: next
 #theme: hexo-theme-mame
-#theme: landscape
+#qqqqtheme: landscape
 #theme: hueman
 #theme: phase
 #theme: hexo-theme-noderce
