@@ -16,19 +16,18 @@ categories: 技术
 若要全方面解决InnoDB死锁问题，我们需要对下面几个方面了如指掌。
 
 - MVCC
-- 共享锁和排它锁
-- 快照读和当前读
 - 事务的隔离级别
+- 快照读和当前读
+- 幻读
 - 聚簇索引
+- 死锁
 - INNODB_TRX，INNODB_LOCKS，INNODB_LOCK_WAITS 
 
 ### 一、MVCC
 
 多版本并发控制是指InnoDB存储引擎通过行多版本的方式来读取当前执行时间数据库中的行数据，简单说就是读不加锁，读写不冲突。这样会极大的增加数据库的并发性能。有人问了，读不加锁，那么写会加锁的啊，这个时候再同时进行读能正常读取吗，答案是肯定的，读取操作不会因为锁没释放而等待，而是会去读取行的一个快照数据（不同事务的隔离级别，访问的快照数据不同）。
 
-### 二、共享锁和排它锁
-
-### 三、事务的隔离级别
+### 二、事务的隔离级别
 * Read Uncommited
 * Read Çommited
 * Repeatable Read
@@ -40,14 +39,14 @@ RC级别有关键词：最新数据
 RR级别的关键词：最初数据
 
 我们来看具体的例子，我们模拟两个并发事务请求，分别是：
-> Connection A:
+###### Connection A:
 <pre>
 <code class="sql">start TRANSACTION; 
 select * from tDeadLock where id = 1;
 </code>
 </pre>
 
-> Connection B:
+###### Connection B:
 <pre>
 <code class="sql">start TRANSACTION; 
 update tDeadLock set count=count+1 where id = 1;
@@ -94,22 +93,63 @@ SET SESSION tx_isolation = 'REPEATABLE-READ';
 
 RR事务隔离级别的关键词是：最初数据，所以当B事务进行了commit，在A事务中进行查询的会显示count依然为1。
 
-### 四、快照读和当前读
+### 三、快照读和当前读
 可以这么认为除select外是快照读（select for update，select lock in share mode特殊除外），其他都可以认为是当前读。读取的是记录的最新版本数据，为了保证并发的时候读取的是最新数据需要对改记录进行X锁。
 
-我们来看下例子
+我们来看下例子，在之前的tDeadLock表增加一条记录
+
+| id  | count         | 
+| :---: | :--------: | 
+| 1     | 1 | 
+| 2     | 1 |
 
 
+#### RR事务隔离级别
 
+我们来看具体的例子，我们模拟两个并发请求，分别是：
+###### Connection A:
+<pre>
+<code class="sql">start TRANSACTION; 
+select * from tDeadLock;
+</code>
+</pre>
 
+| id  | count         | 
+| :---: | :--------: | 
+| 1     | 1 | 
+| 2     | 1 |
+<p>
+###### Connection B:
+<pre>
+<code class="sql">update tDeadLock set count=count+1 where id = 1;
+</code>
+</pre>
 
+在事务A中继续执行
+<pre>
+<code class="sql">select * from tDeadLock for update;
+</code>
+</pre>
 
+| id  | count         | 
+| :---: | :--------: | 
+| 1     | 2 | 
+| 2     | 1 |
+<p>
+当前读，查询到的是获取更新过后的数据，我们再在事务A中运行
+<pre>
+<code class="sql">select * from tDeadLock;
+</code>
+</pre>
 
+| id  | count         | 
+| :---: | :--------: | 
+| 1     | 1 | 
+| 2     | 1 |
+<p>
+快照读，获取的是当前事务之前的快照。可以看出不同的事务隔离级别下，快照读和当前读获取的数据是不一样的。（因为RC获取最新数据，RR是获取最初数据，两个概念一结合就比较好理解了。）
 
+### 四、死锁
 
-
-
-
-
-
+文章开头解释了为什么会导致CPU 100%，但是就算100%，并发访问量比较大，也只是处理会变慢而已，为什么会产生死锁呢？
 
