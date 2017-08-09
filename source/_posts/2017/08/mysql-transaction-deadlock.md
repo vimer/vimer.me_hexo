@@ -23,11 +23,11 @@ categories: 技术
 - INNODB_TRX，INNODB_LOCKS，INNODB_LOCK_WAITS 
 
 
-### 一、MVCC
+<t>MVCC</t>
 
 多版本并发控制是指InnoDB存储引擎通过行多版本的方式来读取当前执行时间数据库中的行数据，简单说就是读不加锁，读写不冲突。这样会极大的增加数据库的并发性能。有人问了，读不加锁，那么写会加锁的啊，这个时候再同时进行读能正常读取吗，答案是肯定的，读取操作不会因为锁没释放而等待，而是会去读取行的一个快照数据（不同事务的隔离级别，访问的快照数据不同）。
 
-### 二、事务的隔离级别
+<t>事务的隔离级别</t>
 
 * Read Uncommited
 * Read Çommited
@@ -40,14 +40,14 @@ RC级别有关键词：最新数据
 RR级别的关键词：最初数据
 
 我们来看具体的例子，我们模拟两个并发事务请求，分别是：
-###### Connection A:
+Connection A:
 <pre>
 <code class="sql">start TRANSACTION; 
 select * from tDeadLock where id = 1;
 </code>
 </pre>
 
-###### Connection B:
+Connection B:
 <pre>
 <code class="sql">start TRANSACTION; 
 update tDeadLock set count=count+1 where id = 1;
@@ -56,11 +56,10 @@ update tDeadLock set count=count+1 where id = 1;
 
 在说这两个请求之前，我们先看tDeadLock这个测试表的结构
 
+| id (Primary Key 下同)  | count         | 
+| :---: | :---: | 
+| 1     | 1 | 
 
-| 字段名  | 字段类型         | 索引类型 | 值 |
-| :---: | :--------: | :-----: | :-----: |
-| id     | int | Primary Key |1|
-| count     | int | 无 |1|
 <p>
 我们再回头看两个Connection，A事务中已经开始事务，读取了id=1的数据，但是没有结束事务，同时B中进行并发访问，将id=1的count加1,两者事务都没有提交，因为进行了update，id=1的加了一个x锁，在A连接进行读取的过程中，RC和RR事务的隔离级别下，会使用非锁定一致性读。当A事务未关闭，B事务进行commit后，在RC和RR情况下A事务显示的结果就不一样了。
 
@@ -72,6 +71,7 @@ update tDeadLock set count=count+1 where id = 1;
 SET SESSION tx_isolation = 'READ-COMMITTED';
 </code>
 </pre>
+
 可以使用下面命令验证是否修改成功。
 <pre>
 <code class="sql">SELECT @@global.tx_isolation;
@@ -81,11 +81,9 @@ SELECT @@tx_isolation;
 
 RC事务隔离级别的关键词是： 最新数据，所以当B事务进行了commit，在A事务中进行查询会显示count的值为2。
 
-
 #### 2、RR
 
 同理我们强制使用RR事务隔离级别。
-
 <pre>
 <code class="sql">SET @@global.tx_isolation = 'REPEATABLE-READ'; 
 SET SESSION tx_isolation = 'REPEATABLE-READ'; 
@@ -94,7 +92,7 @@ SET SESSION tx_isolation = 'REPEATABLE-READ';
 
 RR事务隔离级别的关键词是：最初数据，所以当B事务进行了commit，在A事务中进行查询的会显示count依然为1。
 
-### 三、快照读和当前读
+<t>快照读和当前读</t>
 
 可以这么认为除select外是快照读（select for update，select lock in share mode特殊除外），其他都可以认为是当前读。读取的是记录的最新版本数据，为了保证并发的时候读取的是最新数据需要对改记录进行X锁。
 
@@ -109,7 +107,7 @@ RR事务隔离级别的关键词是：最初数据，所以当B事务进行了co
 #### RR事务隔离级别
 
 我们来看具体的例子，我们模拟两个并发请求，分别是：
-###### Connection A:
+Connection A:
 <pre>
 <code class="sql">start TRANSACTION; 
 select * from tDeadLock;
@@ -121,7 +119,7 @@ select * from tDeadLock;
 | 1     | 1 | 
 | 2     | 1 |
 <p>
-###### Connection B:
+Connection B:
 <pre>
 <code class="sql">update tDeadLock set count=count+1 where id = 1;
 </code>
@@ -135,7 +133,7 @@ select * from tDeadLock;
 
 | id  | count         | 
 | :---: | :--------: | 
-| 1     | 2 | 
+| 1     | <font color='red'>2</font> | 
 | 2     | 1 |
 <p>
 当前读，查询到的是获取更新过后的数据，我们再在事务A中运行
@@ -151,13 +149,13 @@ select * from tDeadLock;
 <p>
 快照读，获取的是当前事务之前的快照。可以看出不同的事务隔离级别下，快照读和当前读获取的数据是不一样的。（因为RC获取最新数据，RR是获取最初数据，两个概念一结合就比较好理解了。）
 
-### 四、死锁 和 解锁
+<t>死锁</t>
 
 文章开头解释了为什么会导致CPU 100%，但是就算100%，并发访问量比较大，也只是处理会变慢而已，为什么会产生死锁呢？ 
 
 唯一的可能是多个进程在互相竞争资源，互相对方需要的资源不释放，导致死锁，我们还是回头来看那个例子。
 
-###### Connection A:
+Connection A:
 <pre>
 <code class="sql">start TRANSACTION; 
 select * from tDeadLock where id = 1 for update;
@@ -170,7 +168,7 @@ select * from tDeadLock where id = 1 for update;
 <p>
 
 
-###### Connection B:
+Connection B:
 <pre>
 <code class="sql">start TRANSACTION; 
 select * from tDeadLock where id = 2 for update;
@@ -188,30 +186,40 @@ select * from tDeadLock where id = 2 for update;
 </code>
 </pre>
 
-
 这个时候事务B继续执行事务A加锁的id=1这条记录。就会出现死锁状态，事务A和事务B明显的在竞争资源。当发生死锁的时候，事务B会进行回滚，这个时候事务又可以继续执行完成。
+
+<t>INNODB_TRX, INNODB_LOCKS, INNODB_LOCK_WAITS</t>
 
 这个时候，我们再来看和锁相关的表：
 
-- INNODB_TRX 事务表，正在运行的事务都会显示
+#### INNODB_TRX 
+> 事务表，正在运行的事务都会显示
 
-| trx_id | trx_state | trx_requested_lock_id | trx_weight | trx_mysql_thread_id | trx_query |
-| :--------: | :--------: | :-----:| :---: | :--------: | :-----:|
-| 事务id | 事务状态 | 等待事务的锁id | 事务的权重 | mysql中的线程id | 事务运行的sql语句 |
+* trx_id 事务id
+* trx_state 事务状态
+* trx_requested_lock_id 等待事务锁id
+* trx_weight 事务权重
+* trx_mysql_thread_id mysql中的线程id
+* trx_query 事务运行的sql语句
 <p>
 
-- INNODB_LOCKS 锁表
+#### INNODB_LOCKS
+> 锁表
 
-| lock_index | lock_space | lock_page |lock_rec | lock_data |
-| :--------: | :--------: | :-----:| :---: | :--------: |
-| 锁的索引 | INNODB存储引擎表空间的ID号 | 被锁住的页的数量 | 被锁住的行的数量 | 被锁住的行的主键值 |
+* lock_index 锁的索引
+* lock_space INNODB存储引擎表空间的ID号
+* lock_page 被锁住的页数量
+* lock_rec 被锁住的行数量
+* lock_data 被锁住的行主键值
 <p>
 
-- INNODB_LOCK_WAITS 锁等待表
+#### INNODB_LOCK_WAITS
+> 锁等待表
 
-| requesting_trx_id | request_lock_id | blocking_trx_id |blocking_lock_id |
-| :--------: | :--------: | :-----:| :--------: |
-| 申请锁事务ID | 申请的锁 | 阻塞事务ID | 阻塞锁的ID |
+* requesting_trx_id 申请锁事务ID
+* request_lock_id 申请的锁
+* blocking_trx_id  阻塞事务ID
+* blocking_lock_id 阻塞锁的ID
 <p>
 
 其中 trx_mysql_thread_id 这个id，如果特殊情况，可以直接kill掉。通过这三个表的使用可以达到解锁。
