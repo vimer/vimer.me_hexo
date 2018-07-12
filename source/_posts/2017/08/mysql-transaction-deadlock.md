@@ -222,8 +222,12 @@ select * from tDeadLock where id = 2 for update;
 * blocking_lock_id 阻塞锁的ID
 <p>
 
-其中 trx_mysql_thread_id 这个id，如果特殊情况，可以直接kill掉。通过这三个表的使用可以达到解锁。
+其中 trx_mysql_thread_id 这个id，如果特殊情况，可以根据show full processlist命令查询出来进程id来kill掉，具体表的使用可以参考之前的例子来看下各个表的数据。
 
 <p>
-（全文完）
 
+<t>总结</t>
+当了解死锁背后一些原理后，处理起死锁问题就有迹可循了。
+
+- 写程序的时候可以尽量避免事务的过长（处理时间）
+- 写事务的时候避免相互竞争资源的情况
