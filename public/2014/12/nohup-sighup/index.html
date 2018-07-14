@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+	<!--<title>VIMER.ME | 基础·极致·分享</title>-->
+	<title>nohup和SIGHUP信号 | M疯丶</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="煮酒编码空望月，疯疯癫癫醉人生">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="nohup和SIGHUP信号 | M疯丶">
+    <meta name="twitter:description" content="煮酒编码空望月，疯疯癫癫醉人生">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="nohup和SIGHUP信号 | M疯丶">
+    <meta property="og:description" content="煮酒编码空望月，疯疯癫癫醉人生">
+
+    
+    <meta name="author" content="emacs.cn">
+    
+    <link rel="stylesheet" href="../../../css/hvno.css" type="text/css">
+
+    <link rel="stylesheet" href="../../../css/font-awesome.min.css" type="text/css">
+
+    <link rel="stylesheet" href="../../../css/atelier-forest.light.min.css" type="text/css">
+
+	<!--<link href="//cdn.bootcss.com/highlight.js/8.9.0/styles/magula.min.css" rel="stylesheet">-->
+	<!--<link href="//cdn.bootcss.com/highlight.js/8.8.0/styles/idea.min.css" rel="stylesheet">-->
+	<!--<link href="//cdn.bootcss.com/highlight.js/8.7/styles/atelier-forest.light.min.css" rel="stylesheet">-->
+	<!--<link href="//cdn.bootcss.com/highlight.js/8.7/styles/github.min.css" rel="stylesheet">-->
+    
+    <link rel="icon" href="/images/favicon.ico">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="M疯丶" href="/atom.xml">
+    
+
+    <link rel="canonical" href="http://emacs.cn/2014/12/nohup-sighup/"/>
+
+    
+</head>
+
+<body class="home-template no-js">
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+<header class="panel-cover panel-cover--collapsed">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+		
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for M疯丶">M疯丶</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">基础·极致·分享</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">煮酒编码空望月，疯疯癫癫醉人生</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+             <!-- <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li> -->
+            
+              <li class="navigation__item"><a href="/categories/技术/">技术栈</a></li>
+            
+              <li class="navigation__item"><a href="/categories/创业路/">创业路</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+
+<!-- Excellent blog -->
+  
+  <li class="navigation__item">
+    <a href="/excellent-blogs" title="经常阅读的技术博客" target="_blank">
+      <i class='social fa fa-terminal'></i>
+      <span class="label">Link</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-disabled"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+		<article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+    <!-- <h1 class="post-title post-list__post-title">nohup和SIGHUP信号</h1> -->
+    <h1 style="font-size:2em; line-height:1.8em; margin-top:0; margin-bottom:.2em;">nohup和SIGHUP信号</h1>
+      <time datetime="2014-12-26T03:30:46.000Z" class="post-list__meta--date date">12月26 2014</time>
+	</div>
+  </header>
+  <section class="post">
+    <p>为什么这篇文章会提到nohup呢,主要还是最近在使用了一个叫maptail东西,它可以根据nginx的日志中IP来把IP和具体地址进行转换并显示在中国地图上.这样可以实时的查看接口的调用情况.</p>
+<a id="more"></a>
+<p><img src="http://ww3.sinaimg.cn/large/744e593bgw1enmxnoxfulj20kk0fr41o.jpg" alt="24pi_maptail"></p>
+<p>这里不讨论maptail,主要说得是maptail启用方式: </p>
+<pre>
+<code class="bash">
+tail -f nohup.out | maptail -h my.host.com -p 3000 > /dev/null & 
+</code>
+</pre>
+
+<p>这条命令运行了一段时间后,进程就总是不响应了,但是进程还在.</p>
+<p>不禁让我们对nohup和SIGHUP做了个实验.(自己写博可能有些跳跃,不明白可以直接回复:)</p>
+<pre>
+<code class="bash">
+tail -f 1 &
+</code>
+</pre>
+
+<p>这样放入后台后,通过进程树可以看到</p>
+<p><img src="http://ww1.sinaimg.cn/large/744e593bgw1enmy7tgiutj209q02sjrj.jpg" alt="tail进程树"><br>这个tail进程挂接在bash父进程上.</p>
+<p>我们exit退出当前shell.再次进去看下:<br><img src="http://ww4.sinaimg.cn/large/744e593bgw1enmycasfnbj203f060wej.jpg" alt="tail进程树"><br>可见它被init进程来接管.</p>
+<p>也就是这个进程运行正常,没什么问题.</p>
+<p>那么nohup起了什么作用呢 ? </p>
+<p>如果nohup起守护进程的作用,那么刚才这个进程也能正常运行于后台.</p>
+<p>我们再用nohup来运行这个进程看看</p>
+<pre>
+<code class="bash">
+nohup tail -f 2 &
+</code>
+</pre>
+
+<p>按照上述操作,tail -f 2也同样跑在后台中.</p>
+<p>nohup主要的作用是可以忽略SIGHUP信号,我们对上面两个进程分别进行发出kill -HUP 信号.</p>
+<p>tail -f 2成功忽略了SIGHUP信号,而tail -f 1被成功杀死, 那么SIGHUP信号什么时候发出呢.</p>
+<p>做了一些测试,关闭终端是不能发送SIGHUP给进程的.</p>
+<p>当终端正常连接过程, 把笔记本合上, 过一段时间后, 发现tail -f 1被杀死了, 也就是说SIGHUP是终端连接断开时才发出的. 正常逻辑是: 当终端断开时,SIGHUP信号首先发给shell所在进程,而shell收到后,会向所有进程组发送SIGHUP信号,假设没有任何捕捉此信号，那么受到SIGHUP信号的进程就会关闭了, 而nohup守护的进程就不会.</p>
+<p>当然如果遇到没有nohup进程已经运行,但是想把此进程离开当前进程组比如bash，可以借用distown这个命令.</p>
+
+  </section>
+  <br>
+  <center><font color="#a44a54" size="2px">(转载文章请注明原文出处 <a href='' style="font-color:#496b98" target="_blank" rel="external">Vimer.Me)</a></font></center>
+  <br>
+</article>
+<span class="post-meta__tags tags">&nbsp;</span>
+<span class="post-meta__tags tags">
+  <a class="tags-link" href="../../../tags/SIGHUP">SIGHUP</a>, <a class="tags-link" href="../../../tags/nohup">nohup</a>
+
+</span>
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'vimer';       
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+        <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2018 - Vimer.Me
+    </span>
+</footer>
+
+        </div>
+    </div>
+	<script src="http://okf337562.bkt.clouddn.com/jquery.min.js" type="text/javascript"></script>
+
+	<script src="http://okf337562.bkt.clouddn.com/main.js" type="text/javascript"></script>
+
+	<script src="http://okf337562.bkt.clouddn.com/highlight.min.js" type="text/javascript"></script>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-70385904-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+<script type="text/javascript">
+
+function isPC() {
+	var userAgentInfo = navigator.userAgent;
+	console.log(userAgentInfo)
+	var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+	var flag = true;
+	for (var v = 0; v < Agents.length; v++) {
+		if (userAgentInfo.indexOf(Agents[v]) > 0) {
+			flag = false;
+			break;
+		}
+	}
+	return flag;
+}
+
+ $(document).ready(function() {
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+/*if (!isPC()) {
+	document.title = "";
+}*/
+</script>

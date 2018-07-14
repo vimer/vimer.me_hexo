@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+	<!--<title>VIMER.ME | 基础·极致·分享</title>-->
+	<title>MySql InnoDB事务死锁问题 | M疯丶</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="煮酒编码空望月，疯疯癫癫醉人生">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="MySql InnoDB事务死锁问题 | M疯丶">
+    <meta name="twitter:description" content="煮酒编码空望月，疯疯癫癫醉人生">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="MySql InnoDB事务死锁问题 | M疯丶">
+    <meta property="og:description" content="煮酒编码空望月，疯疯癫癫醉人生">
+
+    
+    <meta name="author" content="emacs.cn">
+    
+    <link rel="stylesheet" href="../../../css/hvno.css" type="text/css">
+
+    <link rel="stylesheet" href="../../../css/font-awesome.min.css" type="text/css">
+
+    <link rel="stylesheet" href="../../../css/atelier-forest.light.min.css" type="text/css">
+
+	<!--<link href="//cdn.bootcss.com/highlight.js/8.9.0/styles/magula.min.css" rel="stylesheet">-->
+	<!--<link href="//cdn.bootcss.com/highlight.js/8.8.0/styles/idea.min.css" rel="stylesheet">-->
+	<!--<link href="//cdn.bootcss.com/highlight.js/8.7/styles/atelier-forest.light.min.css" rel="stylesheet">-->
+	<!--<link href="//cdn.bootcss.com/highlight.js/8.7/styles/github.min.css" rel="stylesheet">-->
+    
+    <link rel="icon" href="/images/favicon.ico">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="M疯丶" href="/atom.xml">
+    
+
+    <link rel="canonical" href="http://emacs.cn/2017/08/mysql-transaction-deadlock/"/>
+
+    
+</head>
+
+<body class="home-template no-js">
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+<header class="panel-cover panel-cover--collapsed">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+		
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for M疯丶">M疯丶</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">基础·极致·分享</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">煮酒编码空望月，疯疯癫癫醉人生</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+             <!-- <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li> -->
+            
+              <li class="navigation__item"><a href="/categories/技术/">技术栈</a></li>
+            
+              <li class="navigation__item"><a href="/categories/创业路/">创业路</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+
+<!-- Excellent blog -->
+  
+  <li class="navigation__item">
+    <a href="/excellent-blogs" title="经常阅读的技术博客" target="_blank">
+      <i class='social fa fa-terminal'></i>
+      <span class="label">Link</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-disabled"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+		<article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+    <!-- <h1 class="post-title post-list__post-title">MySql InnoDB事务死锁问题</h1> -->
+    <h1 style="font-size:2em; line-height:1.8em; margin-top:0; margin-bottom:.2em;">MySql InnoDB事务死锁问题</h1>
+      <time datetime="2017-08-05T15:30:36.000Z" class="post-list__meta--date date">8月5 2017</time>
+	</div>
+  </header>
+  <section class="post">
+    <p>这篇博客的文章内容发生于某天晚上服务端日志报了一大堆 Deadlock found when trying to get lock; try restarting transaction，当时通过字面意思果断可以判断出是Sql事务死锁了，与此同时，MySql所在服务器CPU也远超100%，第一直觉是事务死锁导致线程阻塞，请求数瞬间过多导致CPU超100%。<br><img style="float:right" src="http://okf337562.bkt.clouddn.com/figure/deadlock.jpg" width="50%" height="50%"><br>什么情况下会导致死锁呢？根据以往经验，应该是同时操作了（update/delete等）同一条数据库的记录导致了事务阻塞，由于事务的执行时间过长导致了其他事务的等待，导致CPU攀高。</p>
+<p>死锁这个问题基本上可以说涉及了InnoDB大部分特性：行锁设计，非锁定读，事务，MVCC，聚簇索引 等等，有必要写篇文章好好分析下。</p>
+<a id="more"></a>
+<p>若要全方面解决InnoDB死锁问题，我们需要对下面几个方面了如指掌。</p>
+<ul>
+<li>MVCC</li>
+<li>事务的隔离级别</li>
+<li>快照读和当前读</li>
+<li>聚簇索引</li>
+<li>死锁</li>
+<li>INNODB_TRX，INNODB_LOCKS，INNODB_LOCK_WAITS </li>
+</ul>
+<t>MVCC</t>
+
+<p>多版本并发控制是指InnoDB存储引擎通过行多版本的方式来读取当前执行时间数据库中的行数据，简单说就是读不加锁，读写不冲突。这样会极大的增加数据库的并发性能。有人问了，读不加锁，那么写会加锁的啊，这个时候再同时进行读能正常读取吗，答案是肯定的，读取操作不会因为锁没释放而等待，而是会去读取行的一个快照数据（不同事务的隔离级别，访问的快照数据不同）。</p>
+<t>事务的隔离级别</t>
+
+<ul>
+<li>Read Uncommited</li>
+<li>Read Çommited</li>
+<li>Repeatable Read</li>
+<li>Serializable</li>
+</ul>
+<p>其中，Read Uncommited 和 Serializable 比较极端，前一个可以读取未提交的记录，后一个读写冲突，并发性低，所以两者在一般情况下都不建议使用，用的最多是RC和RR。</p>
+<p>RC级别有关键词：最新数据<br>RR级别的关键词：最初数据</p>
+<p>我们来看具体的例子，我们模拟两个并发事务请求，分别是：<br>Connection A:</p>
+<pre>
+<code class="sql">start TRANSACTION; 
+select * from tDeadLock where id = 1;
+</code>
+</pre>
+
+<p>Connection B:</p>
+<pre>
+<code class="sql">start TRANSACTION; 
+update tDeadLock set count=count+1 where id = 1;
+</code>
+</pre>
+
+<p>在说这两个请求之前，我们先看tDeadLock这个测试表的结构</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">id (Primary Key 下同)</th>
+<th style="text-align:center">count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<p></p><p><br>我们再回头看两个Connection，A事务中已经开始事务，读取了id=1的数据，但是没有结束事务，同时B中进行并发访问，将id=1的count加1,两者事务都没有提交，因为进行了update，id=1的加了一个x锁，在A连接进行读取的过程中，RC和RR事务的隔离级别下，会使用非锁定一致性读。当A事务未关闭，B事务进行commit后，在RC和RR情况下A事务显示的结果就不一样了。</p>
+<h4 id="1、RC">1、RC</h4>
+<p>在当前两个连接开始之前先执行下面两句，强制使用RC事务隔离级别。</p>
+<pre>
+<code class="sql">SET @@global.tx_isolation = 'READ-COMMITTED'; 
+SET SESSION tx_isolation = 'READ-COMMITTED';
+</code>
+</pre>
+
+<p>可以使用下面命令验证是否修改成功。</p>
+<pre>
+<code class="sql">SELECT @@global.tx_isolation;
+SELECT @@tx_isolation;
+</code>
+</pre>
+
+<p>RC事务隔离级别的关键词是： 最新数据，所以当B事务进行了commit，在A事务中进行查询会显示count的值为2。</p>
+<h4 id="2、RR">2、RR</h4>
+<p>同理我们强制使用RR事务隔离级别。</p>
+<pre>
+<code class="sql">SET @@global.tx_isolation = 'REPEATABLE-READ'; 
+SET SESSION tx_isolation = 'REPEATABLE-READ'; 
+</code>
+</pre>
+
+<p>RR事务隔离级别的关键词是：最初数据，所以当B事务进行了commit，在A事务中进行查询的会显示count依然为1。</p>
+<t>快照读和当前读</t>
+
+<p>可以这么认为除select外是快照读（select for update，select lock in share mode特殊除外），其他都可以认为是当前读。读取的是记录的最新版本数据，为了保证并发的时候读取的是最新数据需要对改记录进行X锁。</p>
+<p>我们来看下例子，在之前的tDeadLock表增加一条记录</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">id</th>
+<th style="text-align:center">count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<h4 id="RR事务隔离级别">RR事务隔离级别</h4>
+<p>我们来看具体的例子，我们模拟两个并发请求，分别是：<br>Connection A:</p>
+<pre>
+<code class="sql">start TRANSACTION; 
+select * from tDeadLock;
+</code>
+</pre>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">id</th>
+<th style="text-align:center">count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<p></p><p><br>Connection B:</p>
+<pre>
+<code class="sql">update tDeadLock set count=count+1 where id = 1;
+</code>
+</pre>
+
+<p>在事务A中继续执行</p>
+<pre>
+<code class="sql">select * from tDeadLock for update;
+</code>
+</pre>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">id</th>
+<th style="text-align:center">count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center"><font color="red">2</font></td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<p></p><p><br>当前读，查询到的是获取更新过后的数据，我们再在事务A中运行</p>
+<pre>
+<code class="sql">select * from tDeadLock;
+</code>
+</pre>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">id</th>
+<th style="text-align:center">count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<p></p><p><br>快照读，获取的是当前事务之前的快照。可以看出不同的事务隔离级别下，快照读和当前读获取的数据是不一样的。（因为RC获取最新数据，RR是获取最初数据，两个概念一结合就比较好理解了。）</p>
+<t>死锁</t>
+
+<p>文章开头解释了为什么会导致CPU 100%，但是就算100%，并发访问量比较大，也只是处理会变慢而已，为什么会产生死锁呢？ </p>
+<p>唯一的可能是多个进程在互相竞争资源，互相对方需要的资源不释放，导致死锁，我们还是回头来看那个例子。</p>
+<p>Connection A:</p>
+<pre>
+<code class="sql">start TRANSACTION; 
+select * from tDeadLock where id = 1 for update;
+</code>
+</pre>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">id</th>
+<th style="text-align:center">count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<p>
+
+
+</p><p>Connection B:</p>
+<pre>
+<code class="sql">start TRANSACTION; 
+select * from tDeadLock where id = 2 for update;
+</code>
+</pre>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">id</th>
+<th style="text-align:center">count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<p>
+
+</p><p>这两个事务都在所查询的记录上加了X锁，如果事务A继续执行下面这句Sql，会出现阻塞状态。</p>
+<pre>
+<code class="sql">select * from tDeadLock where id = 2 for update;
+</code>
+</pre>
+
+<p>这个时候事务B继续执行事务A加锁的id=1这条记录。就会出现死锁状态，事务A和事务B明显的在竞争资源。当发生死锁的时候，事务B会进行回滚，这个时候事务又可以继续执行完成。</p>
+<t>INNODB_TRX, INNODB_LOCKS, INNODB_LOCK_WAITS</t>
+
+<p>这个时候，我们再来看和锁相关的表：</p>
+<h4 id="INNODB_TRX">INNODB_TRX</h4>
+<blockquote>
+<p>事务表，正在运行的事务都会显示</p>
+</blockquote>
+<ul>
+<li>trx_id 事务id</li>
+<li>trx_state 事务状态</li>
+<li>trx_requested_lock_id 等待事务锁id</li>
+<li>trx_weight 事务权重</li>
+<li>trx_mysql_thread_id mysql中的线程id</li>
+<li>trx_query 事务运行的sql语句<p>
+
+</p></li>
+</ul>
+<h4 id="INNODB_LOCKS">INNODB_LOCKS</h4>
+<blockquote>
+<p>锁表</p>
+</blockquote>
+<ul>
+<li>lock_index 锁的索引</li>
+<li>lock_space INNODB存储引擎表空间的ID号</li>
+<li>lock_page 被锁住的页数量</li>
+<li>lock_rec 被锁住的行数量</li>
+<li>lock_data 被锁住的行主键值<p>
+
+</p></li>
+</ul>
+<h4 id="INNODB_LOCK_WAITS">INNODB_LOCK_WAITS</h4>
+<blockquote>
+<p>锁等待表</p>
+</blockquote>
+<ul>
+<li>requesting_trx_id 申请锁事务ID</li>
+<li>request_lock_id 申请的锁</li>
+<li>blocking_trx_id  阻塞事务ID</li>
+<li>blocking_lock_id 阻塞锁的ID<p>
+
+</p></li>
+</ul>
+<p>其中 trx_mysql_thread_id 这个id，如果特殊情况，可以根据show full processlist命令查询出来进程id来kill掉，具体表的使用可以参考之前的例子来看下各个表的数据。</p>
+<p>
+
+</p><p><t>总结</t><br>当了解死锁背后一些原理后，处理起死锁问题就有迹可循了。</p>
+<ul>
+<li>写程序的时候可以尽量避免事务的过长（处理时间）</li>
+<li>写事务的时候避免相互竞争资源的情况</li>
+</ul>
+
+  </section>
+  <br>
+  <center><font color="#a44a54" size="2px">(转载文章请注明原文出处 <a href='' style="font-color:#496b98" target="_blank" rel="external">Vimer.Me)</a></font></center>
+  <br>
+</article>
+<span class="post-meta__tags tags">&nbsp;</span>
+<span class="post-meta__tags tags">
+  <a class="tags-link" href="../../../tags/InnoDB">InnoDB</a>, <a class="tags-link" href="../../../tags/Mysql">Mysql</a>, <a class="tags-link" href="../../../tags/死锁">死锁</a>
+
+</span>
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'vimer';       
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+        <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2018 - Vimer.Me
+    </span>
+</footer>
+
+        </div>
+    </div>
+	<script src="http://okf337562.bkt.clouddn.com/jquery.min.js" type="text/javascript"></script>
+
+	<script src="http://okf337562.bkt.clouddn.com/main.js" type="text/javascript"></script>
+
+	<script src="http://okf337562.bkt.clouddn.com/highlight.min.js" type="text/javascript"></script>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-70385904-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+<script type="text/javascript">
+
+function isPC() {
+	var userAgentInfo = navigator.userAgent;
+	console.log(userAgentInfo)
+	var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+	var flag = true;
+	for (var v = 0; v < Agents.length; v++) {
+		if (userAgentInfo.indexOf(Agents[v]) > 0) {
+			flag = false;
+			break;
+		}
+	}
+	return flag;
+}
+
+ $(document).ready(function() {
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+/*if (!isPC()) {
+	document.title = "";
+}*/
+</script>

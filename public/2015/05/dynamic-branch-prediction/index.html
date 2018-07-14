@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+	<!--<title>VIMER.ME | 基础·极致·分享</title>-->
+	<title>动态分支预测 | M疯丶</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="煮酒编码空望月，疯疯癫癫醉人生">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="动态分支预测 | M疯丶">
+    <meta name="twitter:description" content="煮酒编码空望月，疯疯癫癫醉人生">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="动态分支预测 | M疯丶">
+    <meta property="og:description" content="煮酒编码空望月，疯疯癫癫醉人生">
+
+    
+    <meta name="author" content="emacs.cn">
+    
+    <link rel="stylesheet" href="../../../css/hvno.css" type="text/css">
+
+    <link rel="stylesheet" href="../../../css/font-awesome.min.css" type="text/css">
+
+    <link rel="stylesheet" href="../../../css/atelier-forest.light.min.css" type="text/css">
+
+	<!--<link href="//cdn.bootcss.com/highlight.js/8.9.0/styles/magula.min.css" rel="stylesheet">-->
+	<!--<link href="//cdn.bootcss.com/highlight.js/8.8.0/styles/idea.min.css" rel="stylesheet">-->
+	<!--<link href="//cdn.bootcss.com/highlight.js/8.7/styles/atelier-forest.light.min.css" rel="stylesheet">-->
+	<!--<link href="//cdn.bootcss.com/highlight.js/8.7/styles/github.min.css" rel="stylesheet">-->
+    
+    <link rel="icon" href="/images/favicon.ico">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="M疯丶" href="/atom.xml">
+    
+
+    <link rel="canonical" href="http://emacs.cn/2015/05/dynamic-branch-prediction/"/>
+
+    
+</head>
+
+<body class="home-template no-js">
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+<header class="panel-cover panel-cover--collapsed">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+		
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for M疯丶">M疯丶</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">基础·极致·分享</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">煮酒编码空望月，疯疯癫癫醉人生</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+             <!-- <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li> -->
+            
+              <li class="navigation__item"><a href="/categories/技术/">技术栈</a></li>
+            
+              <li class="navigation__item"><a href="/categories/创业路/">创业路</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+
+<!-- Excellent blog -->
+  
+  <li class="navigation__item">
+    <a href="/excellent-blogs" title="经常阅读的技术博客" target="_blank">
+      <i class='social fa fa-terminal'></i>
+      <span class="label">Link</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-disabled"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+		<article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+    <!-- <h1 class="post-title post-list__post-title">动态分支预测</h1> -->
+    <h1 style="font-size:2em; line-height:1.8em; margin-top:0; margin-bottom:.2em;">动态分支预测</h1>
+      <time datetime="2015-05-10T04:24:29.000Z" class="post-list__meta--date date">5月10 2015</time>
+	</div>
+  </header>
+  <section class="post">
+    <p>说起这个话题也挺有意思，上周五我在公司技术分享的时候，在最末提到一个问题:<br>为什么排序过的数据在遍历的时候速度更快 ?<br>这里我拿出很久之前在Stack Overflow上火车在行驶的过程中的例子</p>
+<a id="more"></a>
+<p><img src="http://ww4.sinaimg.cn/large/744e593bgw1erz071og68j21520jp7b8.jpg" alt=""></p>
+<p><img src="http://ww2.sinaimg.cn/large/744e593bgw1erz08s1yjaj21540ih7bj.jpg" alt=""></p>
+<p><img src="http://ww2.sinaimg.cn/large/744e593bgw1erz08s1yjaj21540ih7bj.jpg" alt=""></p>
+<p><img src="http://ww3.sinaimg.cn/large/744e593bgw1erz0a5681wj215a0mh7dc.jpg" alt=""></p>
+<p><img src="http://ww2.sinaimg.cn/large/744e593bgw1erz0bo194hj214y0j7tel.jpg" alt=""></p>
+<p><img src="http://ww2.sinaimg.cn/large/744e593bgw1erz0dxmakaj214r0lun4t.jpg" alt=""></p>
+<p>这里就有伙伴提出问题了，既然靠猜，火车如果发现目的地不是预期的，那么就说明猜错了，但是CPU怎么知道猜错了呢？ 这里就涉及到cpu的流水线.</p>
+<p>比如一个分支代码: </p>
+<figure class="highlight C"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (data[j] &gt;= <span class="number">128</span>) {</div><div class="line">	sum += data[j];</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>从高级语言层来看，这段代码是只能顺序执行的，必须先检测条件，才能执行条件对应的语句. 但是从CPU角度来看，却不是这样，CPU会把这几条语句分成多条指令，取个简单例子:</p>
+<p><img src="http://ww1.sinaimg.cn/large/744e593bgw1erz14fsgxmj210b0cltc0.jpg" alt=""></p>
+<p>为了提高CPU中存储器、译码等的效率，CPU可采取流水线方式，上面两条指令假设一个是判断指令，一个是预测指令。那么当判断指令取指时，预测指令什么都还没做，当判断指令译码时，预测指令才开始取指，当判断指令执行时预测指令开始译码，这个时候，判断指令要么true，要么false，如果true 说明预测的指令是对的，这样效率会很明显提高，反之如果是false，那么就要重新进行，并把 目标地址 缓存到一个存储器中。一直循环到最后，这样就很容易解释为什么排序过的程序遍历会更快了.</p>
+<p>补充下测试代码:</p>
+<pre>
+<code class="C++">
+int main()
+{
+        const unsigned arraySize = 32768;
+        int data[arraySize];
+        for (unsigned i = 0; i < arraySize; i++) {
+                data[i] = std::rand() % 256;
+        }
+        //std::sort(data, data + arraySize);
+        clock_t start = clock();
+        long long sum = 0;
+        for (unsigned i = 0; i < 100000; i++) {
+                for (unsigned j = 0; j < arraySize; j++) {
+                        if (data[j] >= 128) {
+                                sum += data[j];
+                        }
+                }
+        }
+        double elapsedTime = static_cast<double>(clock() - start) / CLOCKS_PER_SEC;
+        std::cout << "time = "<< elapsedTime << std::endl;
+        std::cout << "sum = " << sum << std::endl;
+}
+</double></code>
+</pre>
+
+<p>在不sort的情况下和sort情况下可分别测试下。</p>
+
+  </section>
+  <br>
+  <center><font color="#a44a54" size="2px">(转载文章请注明原文出处 <a href='' style="font-color:#496b98" target="_blank" rel="external">Vimer.Me)</a></font></center>
+  <br>
+</article>
+<span class="post-meta__tags tags">&nbsp;</span>
+<span class="post-meta__tags tags">
+  <a class="tags-link" href="../../../tags/cpu">cpu</a>, <a class="tags-link" href="../../../tags/性能">性能</a>
+
+</span>
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'vimer';       
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+        <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2018 - Vimer.Me
+    </span>
+</footer>
+
+        </div>
+    </div>
+	<script src="http://okf337562.bkt.clouddn.com/jquery.min.js" type="text/javascript"></script>
+
+	<script src="http://okf337562.bkt.clouddn.com/main.js" type="text/javascript"></script>
+
+	<script src="http://okf337562.bkt.clouddn.com/highlight.min.js" type="text/javascript"></script>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-70385904-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+<script type="text/javascript">
+
+function isPC() {
+	var userAgentInfo = navigator.userAgent;
+	console.log(userAgentInfo)
+	var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+	var flag = true;
+	for (var v = 0; v < Agents.length; v++) {
+		if (userAgentInfo.indexOf(Agents[v]) > 0) {
+			flag = false;
+			break;
+		}
+	}
+	return flag;
+}
+
+ $(document).ready(function() {
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+/*if (!isPC()) {
+	document.title = "";
+}*/
+</script>

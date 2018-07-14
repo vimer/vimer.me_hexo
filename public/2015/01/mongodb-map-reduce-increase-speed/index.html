@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+	<!--<title>VIMER.ME | 基础·极致·分享</title>-->
+	<title>MongoDB Map-Reduce 原理及提速 | M疯丶</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="煮酒编码空望月，疯疯癫癫醉人生">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="MongoDB Map-Reduce 原理及提速 | M疯丶">
+    <meta name="twitter:description" content="煮酒编码空望月，疯疯癫癫醉人生">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="MongoDB Map-Reduce 原理及提速 | M疯丶">
+    <meta property="og:description" content="煮酒编码空望月，疯疯癫癫醉人生">
+
+    
+    <meta name="author" content="emacs.cn">
+    
+    <link rel="stylesheet" href="../../../css/hvno.css" type="text/css">
+
+    <link rel="stylesheet" href="../../../css/font-awesome.min.css" type="text/css">
+
+    <link rel="stylesheet" href="../../../css/atelier-forest.light.min.css" type="text/css">
+
+	<!--<link href="//cdn.bootcss.com/highlight.js/8.9.0/styles/magula.min.css" rel="stylesheet">-->
+	<!--<link href="//cdn.bootcss.com/highlight.js/8.8.0/styles/idea.min.css" rel="stylesheet">-->
+	<!--<link href="//cdn.bootcss.com/highlight.js/8.7/styles/atelier-forest.light.min.css" rel="stylesheet">-->
+	<!--<link href="//cdn.bootcss.com/highlight.js/8.7/styles/github.min.css" rel="stylesheet">-->
+    
+    <link rel="icon" href="/images/favicon.ico">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="M疯丶" href="/atom.xml">
+    
+
+    <link rel="canonical" href="http://emacs.cn/2015/01/mongodb-map-reduce-increase-speed/"/>
+
+    
+</head>
+
+<body class="home-template no-js">
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+<header class="panel-cover panel-cover--collapsed">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+		
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for M疯丶">M疯丶</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">基础·极致·分享</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">煮酒编码空望月，疯疯癫癫醉人生</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+             <!-- <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li> -->
+            
+              <li class="navigation__item"><a href="/categories/技术/">技术栈</a></li>
+            
+              <li class="navigation__item"><a href="/categories/创业路/">创业路</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+
+<!-- Excellent blog -->
+  
+  <li class="navigation__item">
+    <a href="/excellent-blogs" title="经常阅读的技术博客" target="_blank">
+      <i class='social fa fa-terminal'></i>
+      <span class="label">Link</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-disabled"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+		<article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+    <!-- <h1 class="post-title post-list__post-title">MongoDB Map-Reduce 原理及提速</h1> -->
+    <h1 style="font-size:2em; line-height:1.8em; margin-top:0; margin-bottom:.2em;">MongoDB Map-Reduce 原理及提速</h1>
+      <time datetime="2015-01-18T04:07:42.000Z" class="post-list__meta--date date">1月18 2015</time>
+	</div>
+  </header>
+  <section class="post">
+    <p>想要优化Map-reduce就要深入理解其原理.<br>Map-Reduce基本原理请见下图:</p>
+<p><img src="http://okf337562.bkt.clouddn.com/map-reduce.jpg" alt="Map-Reduce基本原理"></p>
+<a id="more"></a>
+<p>整个数据处理流程可以参见官方上图,先对要进行处理的数据进行Query,然后针对Query的数据进行map,最后针对map的数据进行reduce.</p>
+<p>简单了解之后,我们这里取一个例子熟悉下整个过程:</p>
+<p>数据基本格式为:</p>
+<pre>
+<code class="js">
+/* 0 */
+{
+    "code" : "A",
+    "uid" : "id_1",
+    "count" : 1
+}
+
+/* 1 */
+{
+    "code" : "A",
+    "uid" : "id_1",
+    "count" : 1
+}
+
+/* 2 */
+{
+    "code" : "B",
+    "uid" : "id_1",
+    "count" : 1
+}
+
+/* 3 */
+{
+    "code" : "B",
+    "uid" : "id_2",
+    "count" : 2
+}
+</code>
+</pre>
+
+<p>目的:根据uid计算出count的和 且 这个合涉及到哪些code.</p>
+<p>很快就可以写出Map和Reduce函数:</p>
+<pre>
+<code class="javascript">
+var map = function() {
+    emit(this.uid, {"code":this.code || "", count:this.count || 1});
+};
+
+var reduce = function(key, values) {
+    var result = {code:{}, count:0};
+    values.forEach(function(val) {
+                result.code[val.code] = 1;
+                result.count += val.count;
+                });
+    return result;
+}
+</code>
+</pre>
+
+<p>结果为:</p>
+<pre>
+<code class="javascript">
+/* 0 */
+{
+    "_id" : "id_1",
+    "value" : {
+        "code" : {
+            "A" : 1,
+            "B" : 1
+        },
+        "count" : 3
+    }
+}
+
+/* 1 */
+{
+    "_id" : "id_2",
+    "value" : {
+        "code" : "B",
+        "count" : 2
+    }
+}
+</code>
+</pre>
+
+<p>这次我省去了query的过程,直接进行Map和Reduce,我们来拆解下过程:</p>
+<p>首先,MongoDB会扫描整个数据表(这里省去Query)遍历所有documents,对于每个docuemnt都会根据key(uid)进行map存储.</p>
+<p>其次,这个时候MongoDB会对记录的size进行检查( mongod checks every 100 records that the size of the map is not over 50KB, if so it runs reduce on ALL current keys. If size of map is still over 100KB, it dumps all current documents to disk in an “incremental” collection.)</p>
+<p>最后根据map的数据进行reduce操作.</p>
+<p>好,上面三点是大概的过程,对于Mapping过程,上面实例中会进行</p>
+<pre>
+<code class="javascript">
+{"id_1", values:[{"code":"A", "count":1}, {"code":"A", "count":1}, {"code":"B", "count":1}}
+</code>
+</pre>
+
+<p>这样的Emit操作.这点是需要注意的.然后以这样得方式传入到Reduce进行处理,所以Reduce必须对values进行forEach处理.</p>
+<p>通过上面这个过程,还有一点要非常注意:如果有很多文档,而且这些文档的分布是非常随机的,当内存比较小时,MongoDB会采取把这些数据存在一个inc自增的文档中.</p>
+<p>比方说:我有A, B, C三个key, 每个key有100个, 但是这些key都是随机分布的 比如A…B…A…B..C…A..B..C..当我要先对A进行Emit时需要把所有是A的key的document获取出来,那么这个过程当内存很小时 需要把大部分得document存储到磁盘上.然后内存和磁盘一直交换数据,至到把A全部找出为止(期间每在内存中操作的部分A会先Emit出去).</p>
+<p>这种操作肯定很耗时, 如果我们对key进行索引且排好序,那么排好序的A就会大部分在内存中,减少了内存和磁盘的切换次数.</p>
+<p>所以对大数据加排序是必须要有的.这个细节至少可以提高很多倍得处理速度.</p>
+<p>基本原理先说到这,还有更多实践干货留着下次说.</p>
+
+  </section>
+  <br>
+  <center><font color="#a44a54" size="2px">(转载文章请注明原文出处 <a href='' style="font-color:#496b98" target="_blank" rel="external">Vimer.Me)</a></font></center>
+  <br>
+</article>
+<span class="post-meta__tags tags">&nbsp;</span>
+<span class="post-meta__tags tags">
+  <a class="tags-link" href="../../../tags/Map-Reduce">Map-Reduce</a>, <a class="tags-link" href="../../../tags/MongoDB">MongoDB</a>
+
+</span>
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'vimer';       
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+        <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2018 - Vimer.Me
+    </span>
+</footer>
+
+        </div>
+    </div>
+	<script src="http://okf337562.bkt.clouddn.com/jquery.min.js" type="text/javascript"></script>
+
+	<script src="http://okf337562.bkt.clouddn.com/main.js" type="text/javascript"></script>
+
+	<script src="http://okf337562.bkt.clouddn.com/highlight.min.js" type="text/javascript"></script>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-70385904-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+<script type="text/javascript">
+
+function isPC() {
+	var userAgentInfo = navigator.userAgent;
+	console.log(userAgentInfo)
+	var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+	var flag = true;
+	for (var v = 0; v < Agents.length; v++) {
+		if (userAgentInfo.indexOf(Agents[v]) > 0) {
+			flag = false;
+			break;
+		}
+	}
+	return flag;
+}
+
+ $(document).ready(function() {
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+/*if (!isPC()) {
+	document.title = "";
+}*/
+</script>
