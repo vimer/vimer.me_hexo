@@ -23,7 +23,7 @@ author: emacs.cn
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://emacs.cn
+url: https://emacs.cn
 root: /
 archive_dir: archives
 category_dir: categories

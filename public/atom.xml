@@ -3,9 +3,9 @@
   <title><![CDATA[M疯丶]]></title>
   <subtitle><![CDATA[基础·极致·分享]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://emacs.cn/"/>
-  <updated>2018-08-13T12:34:45.339Z</updated>
-  <id>http://emacs.cn/</id>
+  <link href="https://emacs.cn/"/>
+  <updated>2018-08-13T12:48:50.822Z</updated>
+  <id>https://emacs.cn/</id>
   
   <author>
     <name><![CDATA[emacs.cn]]></name>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[]]></title>
-    <link href="http://emacs.cn/2017/09/git/"/>
-    <id>http://emacs.cn/2017/09/git/</id>
+    <link href="https://emacs.cn/2017/09/git/"/>
+    <id>https://emacs.cn/2017/09/git/</id>
     <published>2017-09-20T07:15:19.000Z</published>
     <updated>2017-09-20T07:15:19.000Z</updated>
     <content type="html"><![CDATA[]]></content>
@@ -29,8 +29,8 @@
   
   <entry>
     <title><![CDATA[MySql InnoDB事务死锁问题]]></title>
-    <link href="http://emacs.cn/2017/08/mysql-transaction-deadlock/"/>
-    <id>http://emacs.cn/2017/08/mysql-transaction-deadlock/</id>
+    <link href="https://emacs.cn/2017/08/mysql-transaction-deadlock/"/>
+    <id>https://emacs.cn/2017/08/mysql-transaction-deadlock/</id>
     <published>2017-08-05T15:30:36.000Z</published>
     <updated>2017-08-10T14:30:49.000Z</updated>
     <content type="html"><![CDATA[<p>这篇博客的文章内容发生于某天晚上服务端日志报了一大堆 Deadlock found when trying to get lock; try restarting transaction，当时通过字面意思果断可以判断出是Sql事务死锁了，与此同时，MySql所在服务器CPU也远超100%，第一直觉是事务死锁导致线程阻塞，请求数瞬间过多导致CPU超100%。<br><img style="float:right" src="http://okf337562.bkt.clouddn.com/figure/deadlock.jpg" width="50%" height="50%"><br>什么情况下会导致死锁呢？根据以往经验，应该是同时操作了（update/delete等）同一条数据库的记录导致了事务阻塞，由于事务的执行时间过长导致了其他事务的等待，导致CPU攀高。</p>
@@ -332,20 +332,20 @@ select * from tDeadLock where id = 2 for update;
     
     </summary>
     
-      <category term="Mysql" scheme="http://emacs.cn/tags/Mysql/"/>
+      <category term="Mysql" scheme="https://emacs.cn/tags/Mysql/"/>
     
-      <category term="InnoDB" scheme="http://emacs.cn/tags/InnoDB/"/>
+      <category term="InnoDB" scheme="https://emacs.cn/tags/InnoDB/"/>
     
-      <category term="死锁" scheme="http://emacs.cn/tags/%E6%AD%BB%E9%94%81/"/>
+      <category term="死锁" scheme="https://emacs.cn/tags/%E6%AD%BB%E9%94%81/"/>
     
-      <category term="技术" scheme="http://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[创业路「九」：2015，这一年]]></title>
-    <link href="http://emacs.cn/2016/02/startup-9-2015-this-year/"/>
-    <id>http://emacs.cn/2016/02/startup-9-2015-this-year/</id>
+    <link href="https://emacs.cn/2016/02/startup-9-2015-this-year/"/>
+    <id>https://emacs.cn/2016/02/startup-9-2015-this-year/</id>
     <published>2016-02-03T13:30:00.000Z</published>
     <updated>2017-07-27T11:08:28.000Z</updated>
     <content type="html"><![CDATA[<p>2015年4月5日一口气读完《创业时，我们在知乎聊什么》，其中一段话是这样的：</p>
@@ -445,8 +445,8 @@ select * from tDeadLock where id = 2 for update;
   
   <entry>
     <title><![CDATA[创业路「八」：每个人都应该读读「重新定义团队：谷歌如何工作」]]></title>
-    <link href="http://emacs.cn/2016/01/startup-8-everyone-should-read-insights-from-inside-google/"/>
-    <id>http://emacs.cn/2016/01/startup-8-everyone-should-read-insights-from-inside-google/</id>
+    <link href="https://emacs.cn/2016/01/startup-8-everyone-should-read-insights-from-inside-google/"/>
+    <id>https://emacs.cn/2016/01/startup-8-everyone-should-read-insights-from-inside-google/</id>
     <published>2016-01-23T15:50:33.000Z</published>
     <updated>2017-07-27T11:08:24.000Z</updated>
     <content type="html"><![CDATA[<p>这本书看似是给公司的团队leader看的，其实内容对于每一位工作的人都是受益的，我想这本书标题应该改为《重新定义自己在工作中的角色》 更为合适。</p>
@@ -512,16 +512,16 @@ select * from tDeadLock where id = 2 for update;
     
     </summary>
     
-      <category term="读书笔记" scheme="http://emacs.cn/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="https://emacs.cn/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="创业路" scheme="http://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
+      <category term="创业路" scheme="https://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[创业路「七」：好事多磨]]></title>
-    <link href="http://emacs.cn/2016/01/startup-7-good-things-never-come-easy/"/>
-    <id>http://emacs.cn/2016/01/startup-7-good-things-never-come-easy/</id>
+    <link href="https://emacs.cn/2016/01/startup-7-good-things-never-come-easy/"/>
+    <id>https://emacs.cn/2016/01/startup-7-good-things-never-come-easy/</id>
     <published>2016-01-05T14:03:37.000Z</published>
     <updated>2017-07-27T11:08:15.000Z</updated>
     <content type="html"><![CDATA[<p>当天晚上回来的路上，我和天一 一起等公交时，闲聊，“今年年会在一月底，时间过的真快，这也是你和我在多棱镜参加的第二个年会了”， “嗯”， 我问他，“对于15年，你试着用一句话或者几个字来总结下”，他略微停顿了下说：“现实还是和想象的不一样”，我笑着说：“不就是现实很残酷嘛”，他又略微停顿了下说：“以前认为技术上进步应该可以很快，但是现实发现不是这样”。我明白其义：“其实任何事情，任何领域，在你踏入的过程中总是很漫长的，且很艰难的，但是某一天某一刻你会突然发现自己领悟了很多，那一刻就是你成长的时候，然后进入下一个过程循环，过程总是漫长的，所以大部分人都处于这个过程中，就会出现 放弃 这个词，所谓好事多磨就是这个道理。”</p>
@@ -542,14 +542,14 @@ select * from tDeadLock where id = 2 for update;
     
     </summary>
     
-      <category term="创业路" scheme="http://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
+      <category term="创业路" scheme="https://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[创业路「六」：不合适就是不合适]]></title>
-    <link href="http://emacs.cn/2015/10/startup-6-inappropriate-is-inappropriate/"/>
-    <id>http://emacs.cn/2015/10/startup-6-inappropriate-is-inappropriate/</id>
+    <link href="https://emacs.cn/2015/10/startup-6-inappropriate-is-inappropriate/"/>
+    <id>https://emacs.cn/2015/10/startup-6-inappropriate-is-inappropriate/</id>
     <published>2015-10-18T16:35:05.000Z</published>
     <updated>2017-07-27T11:08:00.000Z</updated>
     <content type="html"><![CDATA[<p>10.14号，周四，劝退了一位并肩了3个月的兄弟。这位兄弟做了一手好菜，人也不错，和团队成员相处融洽，但是在试用过程中发现和公司的职位要求有点距离，可能他在其他地方会有更好的发展，为了不耽误双方，就让去寻找更好的得方发展了。在劝退的那天，他租得隔间房被政府抢拆了，还记得那晚他发的朋友圈：”福无双至祸不单行~抬头的一片天，是男儿的一片天，是追梦的少年。 “，加油。</p>
@@ -576,14 +576,14 @@ select * from tDeadLock where id = 2 for update;
     
     </summary>
     
-      <category term="创业路" scheme="http://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
+      <category term="创业路" scheme="https://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[创业路「五」：Done is better than perfect]]></title>
-    <link href="http://emacs.cn/2015/09/startup-5-Done-is-better-than-perfect/"/>
-    <id>http://emacs.cn/2015/09/startup-5-Done-is-better-than-perfect/</id>
+    <link href="https://emacs.cn/2015/09/startup-5-Done-is-better-than-perfect/"/>
+    <id>https://emacs.cn/2015/09/startup-5-Done-is-better-than-perfect/</id>
     <published>2015-09-14T12:24:54.000Z</published>
     <updated>2017-07-27T11:07:51.000Z</updated>
     <content type="html"><![CDATA[<p>一直想写疯狂创业路的第五篇，却总是被各种琐事闯入，其实创业也就是这样，生活不可能是有条不紊的。</p>
@@ -640,14 +640,14 @@ select * from tDeadLock where id = 2 for update;
     
     </summary>
     
-      <category term="创业路" scheme="http://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
+      <category term="创业路" scheme="https://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[创业路「四」：铁打的营盘，流水的'兵']]></title>
-    <link href="http://emacs.cn/2015/05/startup-4-Iron-barracks-water-the-soldiers/"/>
-    <id>http://emacs.cn/2015/05/startup-4-Iron-barracks-water-the-soldiers/</id>
+    <link href="https://emacs.cn/2015/05/startup-4-Iron-barracks-water-the-soldiers/"/>
+    <id>https://emacs.cn/2015/05/startup-4-Iron-barracks-water-the-soldiers/</id>
     <published>2015-05-30T14:54:42.000Z</published>
     <updated>2017-07-27T11:07:42.000Z</updated>
     <content type="html"><![CDATA[<p>最近对这句话”铁打的营盘，流水的兵”理解越来越深刻，并不是因为这句话本身有多难理解，而是理解的角度会随着你正在做的事情越趋深刻。</p>
@@ -679,14 +679,14 @@ select * from tDeadLock where id = 2 for update;
     
     </summary>
     
-      <category term="创业路" scheme="http://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
+      <category term="创业路" scheme="https://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[动态分支预测]]></title>
-    <link href="http://emacs.cn/2015/05/dynamic-branch-prediction/"/>
-    <id>http://emacs.cn/2015/05/dynamic-branch-prediction/</id>
+    <link href="https://emacs.cn/2015/05/dynamic-branch-prediction/"/>
+    <id>https://emacs.cn/2015/05/dynamic-branch-prediction/</id>
     <published>2015-05-10T04:24:29.000Z</published>
     <updated>2017-08-07T10:41:54.000Z</updated>
     <content type="html"><![CDATA[<p>说起这个话题也挺有意思，上周五我在公司技术分享的时候，在最末提到一个问题:<br>为什么排序过的数据在遍历的时候速度更快 ?<br>这里我拿出很久之前在Stack Overflow上火车在行驶的过程中的例子</p>
@@ -739,18 +739,18 @@ int main()
     
     </summary>
     
-      <category term="cpu" scheme="http://emacs.cn/tags/cpu/"/>
+      <category term="cpu" scheme="https://emacs.cn/tags/cpu/"/>
     
-      <category term="性能" scheme="http://emacs.cn/tags/%E6%80%A7%E8%83%BD/"/>
+      <category term="性能" scheme="https://emacs.cn/tags/%E6%80%A7%E8%83%BD/"/>
     
-      <category term="技术" scheme="http://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[创业路「三」：从"速度与激情"看团队]]></title>
-    <link href="http://emacs.cn/2015/04/startup-3-from-fast-furious-Look-team/"/>
-    <id>http://emacs.cn/2015/04/startup-3-from-fast-furious-Look-team/</id>
+    <link href="https://emacs.cn/2015/04/startup-3-from-fast-furious-Look-team/"/>
+    <id>https://emacs.cn/2015/04/startup-3-from-fast-furious-Look-team/</id>
     <published>2015-04-19T15:24:04.000Z</published>
     <updated>2017-07-27T11:07:30.000Z</updated>
     <content type="html"><![CDATA[<p>今晚是第二遍看速7，不仅被剧情吸引，更被这样的团队所吸引， 或许是因为看到团队成员中自己的影子。</p>
@@ -776,14 +776,14 @@ int main()
     
     </summary>
     
-      <category term="创业路" scheme="http://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
+      <category term="创业路" scheme="https://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[创业路「二」：14年末微传播失败--手写字祝福贺卡(书心)]]></title>
-    <link href="http://emacs.cn/2015/04/startup-2-14year-shuxin-failed/"/>
-    <id>http://emacs.cn/2015/04/startup-2-14year-shuxin-failed/</id>
+    <link href="https://emacs.cn/2015/04/startup-2-14year-shuxin-failed/"/>
+    <id>https://emacs.cn/2015/04/startup-2-14year-shuxin-failed/</id>
     <published>2015-04-11T05:52:48.000Z</published>
     <updated>2017-07-27T11:07:20.000Z</updated>
     <content type="html"><![CDATA[<p>14年7月份左右，一个叫“围住神经猫”的H5的游戏在微信刷屏…此后, 这种传播方式被认为是’性价比最高’的方式.</p>
@@ -808,14 +808,14 @@ int main()
     
     </summary>
     
-      <category term="创业路" scheme="http://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
+      <category term="创业路" scheme="https://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[创业路「一」：24pi - 团队合作才能大作, 这是种胸怀]]></title>
-    <link href="http://emacs.cn/2015/03/startup-1-24pi-tearm-will-be-great/"/>
-    <id>http://emacs.cn/2015/03/startup-1-24pi-tearm-will-be-great/</id>
+    <link href="https://emacs.cn/2015/03/startup-1-24pi-tearm-will-be-great/"/>
+    <id>https://emacs.cn/2015/03/startup-1-24pi-tearm-will-be-great/</id>
     <published>2015-03-08T06:34:48.000Z</published>
     <updated>2017-07-27T11:07:10.000Z</updated>
     <content type="html"><![CDATA[<p>直接从大三的创业项目过渡目前这个创业, 来的的确有点快, 本来想一一娓娓道来，但24pi这个产品牵动着核心成员及几十万粉丝的心，请允许我写个总结. 之前的创业产品和项目一些靠谱经验会慢慢补上.</p>
@@ -875,14 +875,14 @@ int main()
     
     </summary>
     
-      <category term="创业路" scheme="http://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
+      <category term="创业路" scheme="https://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[MongoDB Map-Reduce 原理及提速]]></title>
-    <link href="http://emacs.cn/2015/01/mongodb-map-reduce-increase-speed/"/>
-    <id>http://emacs.cn/2015/01/mongodb-map-reduce-increase-speed/</id>
+    <link href="https://emacs.cn/2015/01/mongodb-map-reduce-increase-speed/"/>
+    <id>https://emacs.cn/2015/01/mongodb-map-reduce-increase-speed/</id>
     <published>2015-01-18T04:07:42.000Z</published>
     <updated>2017-08-05T16:27:12.000Z</updated>
     <content type="html"><![CDATA[<p>想要优化Map-reduce就要深入理解其原理.<br>Map-Reduce基本原理请见下图:</p>
@@ -993,18 +993,18 @@ var reduce = function(key, values) {
     
     </summary>
     
-      <category term="Map-Reduce" scheme="http://emacs.cn/tags/Map-Reduce/"/>
+      <category term="Map-Reduce" scheme="https://emacs.cn/tags/Map-Reduce/"/>
     
-      <category term="MongoDB" scheme="http://emacs.cn/tags/MongoDB/"/>
+      <category term="MongoDB" scheme="https://emacs.cn/tags/MongoDB/"/>
     
-      <category term="技术" scheme="http://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Node.js异步回调池, Maximum call stack size exceeded error]]></title>
-    <link href="http://emacs.cn/2015/01/rangeerror-max-call-stack-size-exceeded-error/"/>
-    <id>http://emacs.cn/2015/01/rangeerror-max-call-stack-size-exceeded-error/</id>
+    <link href="https://emacs.cn/2015/01/rangeerror-max-call-stack-size-exceeded-error/"/>
+    <id>https://emacs.cn/2015/01/rangeerror-max-call-stack-size-exceeded-error/</id>
     <published>2015-01-17T08:12:17.000Z</published>
     <updated>2017-07-27T11:06:52.000Z</updated>
     <content type="html"><![CDATA[<p>这种错误主要发生在js调用栈的限制,如下面递归调用的代码:</p>
@@ -1080,18 +1080,18 @@ for (var i=0; i< 100; i++) {
     
     </summary>
     
-      <category term="Node.js" scheme="http://emacs.cn/tags/Node-js/"/>
+      <category term="Node.js" scheme="https://emacs.cn/tags/Node-js/"/>
     
-      <category term="异常" scheme="http://emacs.cn/tags/%E5%BC%82%E5%B8%B8/"/>
+      <category term="异常" scheme="https://emacs.cn/tags/%E5%BC%82%E5%B8%B8/"/>
     
-      <category term="技术" scheme="http://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Node.js和cpu密集型计算]]></title>
-    <link href="http://emacs.cn/2014/12/nodejs-cpu-cal/"/>
-    <id>http://emacs.cn/2014/12/nodejs-cpu-cal/</id>
+    <link href="https://emacs.cn/2014/12/nodejs-cpu-cal/"/>
+    <id>https://emacs.cn/2014/12/nodejs-cpu-cal/</id>
     <published>2014-12-27T11:35:46.000Z</published>
     <updated>2017-08-05T15:45:55.000Z</updated>
     <content type="html"><![CDATA[<pre>
@@ -1220,18 +1220,18 @@ setTimeout(function () {
     
     </summary>
     
-      <category term="Node.js" scheme="http://emacs.cn/tags/Node-js/"/>
+      <category term="Node.js" scheme="https://emacs.cn/tags/Node-js/"/>
     
-      <category term="cpu密集型计算" scheme="http://emacs.cn/tags/cpu%E5%AF%86%E9%9B%86%E5%9E%8B%E8%AE%A1%E7%AE%97/"/>
+      <category term="cpu密集型计算" scheme="https://emacs.cn/tags/cpu%E5%AF%86%E9%9B%86%E5%9E%8B%E8%AE%A1%E7%AE%97/"/>
     
-      <category term="技术" scheme="http://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[nohup和SIGHUP信号]]></title>
-    <link href="http://emacs.cn/2014/12/nohup-sighup/"/>
-    <id>http://emacs.cn/2014/12/nohup-sighup/</id>
+    <link href="https://emacs.cn/2014/12/nohup-sighup/"/>
+    <id>https://emacs.cn/2014/12/nohup-sighup/</id>
     <published>2014-12-26T03:30:46.000Z</published>
     <updated>2017-07-27T11:06:24.000Z</updated>
     <content type="html"><![CDATA[<p>为什么这篇文章会提到nohup呢,主要还是最近在使用了一个叫maptail东西,它可以根据nginx的日志中IP来把IP和具体地址进行转换并显示在中国地图上.这样可以实时的查看接口的调用情况.</p>
@@ -1278,18 +1278,18 @@ nohup tail -f 2 &
     
     </summary>
     
-      <category term="nohup" scheme="http://emacs.cn/tags/nohup/"/>
+      <category term="nohup" scheme="https://emacs.cn/tags/nohup/"/>
     
-      <category term="SIGHUP" scheme="http://emacs.cn/tags/SIGHUP/"/>
+      <category term="SIGHUP" scheme="https://emacs.cn/tags/SIGHUP/"/>
     
-      <category term="技术" scheme="http://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Node.js原子性操作MongoDB]]></title>
-    <link href="http://emacs.cn/2014/12/howto-nodejs-atom-op-mongodb/"/>
-    <id>http://emacs.cn/2014/12/howto-nodejs-atom-op-mongodb/</id>
+    <link href="https://emacs.cn/2014/12/howto-nodejs-atom-op-mongodb/"/>
+    <id>https://emacs.cn/2014/12/howto-nodejs-atom-op-mongodb/</id>
     <published>2014-12-21T12:47:06.000Z</published>
     <updated>2017-07-27T11:05:34.000Z</updated>
     <content type="html"><![CDATA[<p>假设基础数据为:</p>
@@ -1376,20 +1376,20 @@ co(function* () {
     
     </summary>
     
-      <category term="Node.js" scheme="http://emacs.cn/tags/Node-js/"/>
+      <category term="Node.js" scheme="https://emacs.cn/tags/Node-js/"/>
     
-      <category term="MongoDB" scheme="http://emacs.cn/tags/MongoDB/"/>
+      <category term="MongoDB" scheme="https://emacs.cn/tags/MongoDB/"/>
     
-      <category term="原子性" scheme="http://emacs.cn/tags/%E5%8E%9F%E5%AD%90%E6%80%A7/"/>
+      <category term="原子性" scheme="https://emacs.cn/tags/%E5%8E%9F%E5%AD%90%E6%80%A7/"/>
     
-      <category term="技术" scheme="http://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[由 C 中字符串比较引入的问题]]></title>
-    <link href="http://emacs.cn/2012/07/c-string-question/"/>
-    <id>http://emacs.cn/2012/07/c-string-question/</id>
+    <link href="https://emacs.cn/2012/07/c-string-question/"/>
+    <id>https://emacs.cn/2012/07/c-string-question/</id>
     <published>2012-07-19T14:27:45.000Z</published>
     <updated>2017-07-27T11:05:21.000Z</updated>
     <content type="html"><![CDATA[<p>一个同事在Project中写下如下错误代码(为了说明问题, 代码已经简写)</p>
@@ -1492,18 +1492,18 @@ void function(const char* _str) {
     
     </summary>
     
-      <category term="C" scheme="http://emacs.cn/tags/C/"/>
+      <category term="C" scheme="https://emacs.cn/tags/C/"/>
     
-      <category term="字符串" scheme="http://emacs.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="https://emacs.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="技术" scheme="http://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[MONGODB的BASIC INDEXES 和 COMPOUND INDEXES 研究]]></title>
-    <link href="http://emacs.cn/2012/07/mongodb-basic-indexes-compound-indexes/"/>
-    <id>http://emacs.cn/2012/07/mongodb-basic-indexes-compound-indexes/</id>
+    <link href="https://emacs.cn/2012/07/mongodb-basic-indexes-compound-indexes/"/>
+    <id>https://emacs.cn/2012/07/mongodb-basic-indexes-compound-indexes/</id>
     <published>2012-07-11T17:18:41.000Z</published>
     <updated>2017-07-27T11:05:46.000Z</updated>
     <content type="html"><![CDATA[<p>前几天看到一个关于 MongoDB 深入索引的PPT</p>
@@ -1631,11 +1631,11 @@ db.good.ensureIndex({y:1})
     
     </summary>
     
-      <category term="MongoDB" scheme="http://emacs.cn/tags/MongoDB/"/>
+      <category term="MongoDB" scheme="https://emacs.cn/tags/MongoDB/"/>
     
-      <category term="索引" scheme="http://emacs.cn/tags/%E7%B4%A2%E5%BC%95/"/>
+      <category term="索引" scheme="https://emacs.cn/tags/%E7%B4%A2%E5%BC%95/"/>
     
-      <category term="技术" scheme="http://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   

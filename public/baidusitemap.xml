@@ -5,7 +5,7 @@
     
     
   <url>
-    <loc>http://emacs.cn/2017/09/git/</loc>
+    <loc>https://emacs.cn/2017/09/git/</loc>
     <lastmod>2017-09-20T07:15:19.000Z</lastmod>
     <data>
         <display>
@@ -19,7 +19,7 @@
 
     
   <url>
-    <loc>http://emacs.cn/2017/08/mysql-transaction-deadlock/</loc>
+    <loc>https://emacs.cn/2017/08/mysql-transaction-deadlock/</loc>
     <lastmod>2017-08-10T14:30:49.000Z</lastmod>
     <data>
         <display>
@@ -27,13 +27,13 @@
         <pubTime>2017-08-05T15:30:36.000Z</pubTime>
         
          
-              <breadCrumb title="Mysql" url="http://emacs.cn/tags/Mysql/"/>
+              <breadCrumb title="Mysql" url="https://emacs.cn/tags/Mysql/"/>
           
-              <breadCrumb title="InnoDB" url="http://emacs.cn/tags/InnoDB/"/>
+              <breadCrumb title="InnoDB" url="https://emacs.cn/tags/InnoDB/"/>
           
-              <breadCrumb title="死锁" url="http://emacs.cn/tags/%E6%AD%BB%E9%94%81/"/>
+              <breadCrumb title="死锁" url="https://emacs.cn/tags/%E6%AD%BB%E9%94%81/"/>
           
-              <breadCrumb title="技术" url="http://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+              <breadCrumb title="技术" url="https://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>
@@ -41,7 +41,7 @@
 
     
   <url>
-    <loc>http://emacs.cn/2015/05/dynamic-branch-prediction/</loc>
+    <loc>https://emacs.cn/2015/05/dynamic-branch-prediction/</loc>
     <lastmod>2017-08-07T10:41:54.000Z</lastmod>
     <data>
         <display>
@@ -49,11 +49,11 @@
         <pubTime>2015-05-10T04:24:29.000Z</pubTime>
         
          
-              <breadCrumb title="cpu" url="http://emacs.cn/tags/cpu/"/>
+              <breadCrumb title="cpu" url="https://emacs.cn/tags/cpu/"/>
           
-              <breadCrumb title="性能" url="http://emacs.cn/tags/%E6%80%A7%E8%83%BD/"/>
+              <breadCrumb title="性能" url="https://emacs.cn/tags/%E6%80%A7%E8%83%BD/"/>
           
-              <breadCrumb title="技术" url="http://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+              <breadCrumb title="技术" url="https://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>
@@ -61,7 +61,7 @@
 
     
   <url>
-    <loc>http://emacs.cn/2015/01/mongodb-map-reduce-increase-speed/</loc>
+    <loc>https://emacs.cn/2015/01/mongodb-map-reduce-increase-speed/</loc>
     <lastmod>2017-08-05T16:27:12.000Z</lastmod>
     <data>
         <display>
@@ -69,11 +69,11 @@
         <pubTime>2015-01-18T04:07:42.000Z</pubTime>
         
          
-              <breadCrumb title="Map-Reduce" url="http://emacs.cn/tags/Map-Reduce/"/>
+              <breadCrumb title="Map-Reduce" url="https://emacs.cn/tags/Map-Reduce/"/>
           
-              <breadCrumb title="MongoDB" url="http://emacs.cn/tags/MongoDB/"/>
+              <breadCrumb title="MongoDB" url="https://emacs.cn/tags/MongoDB/"/>
           
-              <breadCrumb title="技术" url="http://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+              <breadCrumb title="技术" url="https://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>
@@ -81,7 +81,7 @@
 
     
   <url>
-    <loc>http://emacs.cn/2014/12/nodejs-cpu-cal/</loc>
+    <loc>https://emacs.cn/2014/12/nodejs-cpu-cal/</loc>
     <lastmod>2017-08-05T15:45:55.000Z</lastmod>
     <data>
         <display>
@@ -89,11 +89,11 @@
         <pubTime>2014-12-27T11:35:46.000Z</pubTime>
         
          
-              <breadCrumb title="Node.js" url="http://emacs.cn/tags/Node-js/"/>
+              <breadCrumb title="Node.js" url="https://emacs.cn/tags/Node-js/"/>
           
-              <breadCrumb title="cpu密集型计算" url="http://emacs.cn/tags/cpu%E5%AF%86%E9%9B%86%E5%9E%8B%E8%AE%A1%E7%AE%97/"/>
+              <breadCrumb title="cpu密集型计算" url="https://emacs.cn/tags/cpu%E5%AF%86%E9%9B%86%E5%9E%8B%E8%AE%A1%E7%AE%97/"/>
           
-              <breadCrumb title="技术" url="http://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+              <breadCrumb title="技术" url="https://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>
@@ -101,7 +101,7 @@
 
     
   <url>
-    <loc>http://emacs.cn/2016/02/startup-9-2015-this-year/</loc>
+    <loc>https://emacs.cn/2016/02/startup-9-2015-this-year/</loc>
     <lastmod>2017-07-27T11:08:28.000Z</lastmod>
     <data>
         <display>
@@ -115,7 +115,7 @@
 
     
   <url>
-    <loc>http://emacs.cn/2016/01/startup-8-everyone-should-read-insights-from-inside-google/</loc>
+    <loc>https://emacs.cn/2016/01/startup-8-everyone-should-read-insights-from-inside-google/</loc>
     <lastmod>2017-07-27T11:08:24.000Z</lastmod>
     <data>
         <display>
@@ -123,9 +123,9 @@
         <pubTime>2016-01-23T15:50:33.000Z</pubTime>
         
          
-              <breadCrumb title="读书笔记" url="http://emacs.cn/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+              <breadCrumb title="读书笔记" url="https://emacs.cn/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
           
-              <breadCrumb title="创业路" url="http://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
+              <breadCrumb title="创业路" url="https://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
           
         </display>
     </data>
@@ -133,7 +133,7 @@
 
     
   <url>
-    <loc>http://emacs.cn/2016/01/startup-7-good-things-never-come-easy/</loc>
+    <loc>https://emacs.cn/2016/01/startup-7-good-things-never-come-easy/</loc>
     <lastmod>2017-07-27T11:08:15.000Z</lastmod>
     <data>
         <display>
@@ -141,7 +141,7 @@
         <pubTime>2016-01-05T14:03:37.000Z</pubTime>
         
          
-              <breadCrumb title="创业路" url="http://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
+              <breadCrumb title="创业路" url="https://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
           
         </display>
     </data>
@@ -149,7 +149,7 @@
 
     
   <url>
-    <loc>http://emacs.cn/2015/10/startup-6-inappropriate-is-inappropriate/</loc>
+    <loc>https://emacs.cn/2015/10/startup-6-inappropriate-is-inappropriate/</loc>
     <lastmod>2017-07-27T11:08:00.000Z</lastmod>
     <data>
         <display>
@@ -157,7 +157,7 @@
         <pubTime>2015-10-18T16:35:05.000Z</pubTime>
         
          
-              <breadCrumb title="创业路" url="http://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
+              <breadCrumb title="创业路" url="https://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
           
         </display>
     </data>
@@ -165,7 +165,7 @@
 
     
   <url>
-    <loc>http://emacs.cn/2015/09/startup-5-Done-is-better-than-perfect/</loc>
+    <loc>https://emacs.cn/2015/09/startup-5-Done-is-better-than-perfect/</loc>
     <lastmod>2017-07-27T11:07:51.000Z</lastmod>
     <data>
         <display>
@@ -173,7 +173,7 @@
         <pubTime>2015-09-14T12:24:54.000Z</pubTime>
         
          
-              <breadCrumb title="创业路" url="http://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
+              <breadCrumb title="创业路" url="https://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
           
         </display>
     </data>
@@ -181,7 +181,7 @@
 
     
   <url>
-    <loc>http://emacs.cn/2015/05/startup-4-Iron-barracks-water-the-soldiers/</loc>
+    <loc>https://emacs.cn/2015/05/startup-4-Iron-barracks-water-the-soldiers/</loc>
     <lastmod>2017-07-27T11:07:42.000Z</lastmod>
     <data>
         <display>
@@ -189,7 +189,7 @@
         <pubTime>2015-05-30T14:54:42.000Z</pubTime>
         
          
-              <breadCrumb title="创业路" url="http://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
+              <breadCrumb title="创业路" url="https://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
           
         </display>
     </data>
@@ -197,7 +197,7 @@
 
     
   <url>
-    <loc>http://emacs.cn/2015/04/startup-3-from-fast-furious-Look-team/</loc>
+    <loc>https://emacs.cn/2015/04/startup-3-from-fast-furious-Look-team/</loc>
     <lastmod>2017-07-27T11:07:30.000Z</lastmod>
     <data>
         <display>
@@ -205,7 +205,7 @@
         <pubTime>2015-04-19T15:24:04.000Z</pubTime>
         
          
-              <breadCrumb title="创业路" url="http://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
+              <breadCrumb title="创业路" url="https://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
           
         </display>
     </data>
@@ -213,7 +213,7 @@
 
     
   <url>
-    <loc>http://emacs.cn/2015/04/startup-2-14year-shuxin-failed/</loc>
+    <loc>https://emacs.cn/2015/04/startup-2-14year-shuxin-failed/</loc>
     <lastmod>2017-07-27T11:07:20.000Z</lastmod>
     <data>
         <display>
@@ -221,7 +221,7 @@
         <pubTime>2015-04-11T05:52:48.000Z</pubTime>
         
          
-              <breadCrumb title="创业路" url="http://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
+              <breadCrumb title="创业路" url="https://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
           
         </display>
     </data>
@@ -229,7 +229,7 @@
 
     
   <url>
-    <loc>http://emacs.cn/2015/03/startup-1-24pi-tearm-will-be-great/</loc>
+    <loc>https://emacs.cn/2015/03/startup-1-24pi-tearm-will-be-great/</loc>
     <lastmod>2017-07-27T11:07:10.000Z</lastmod>
     <data>
         <display>
@@ -237,7 +237,7 @@
         <pubTime>2015-03-08T06:34:48.000Z</pubTime>
         
          
-              <breadCrumb title="创业路" url="http://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
+              <breadCrumb title="创业路" url="https://emacs.cn/categories/%E5%88%9B%E4%B8%9A%E8%B7%AF/"/>
           
         </display>
     </data>
@@ -245,7 +245,7 @@
 
     
   <url>
-    <loc>http://emacs.cn/2015/01/rangeerror-max-call-stack-size-exceeded-error/</loc>
+    <loc>https://emacs.cn/2015/01/rangeerror-max-call-stack-size-exceeded-error/</loc>
     <lastmod>2017-07-27T11:06:52.000Z</lastmod>
     <data>
         <display>
@@ -253,11 +253,11 @@
         <pubTime>2015-01-17T08:12:17.000Z</pubTime>
         
          
-              <breadCrumb title="Node.js" url="http://emacs.cn/tags/Node-js/"/>
+              <breadCrumb title="Node.js" url="https://emacs.cn/tags/Node-js/"/>
           
-              <breadCrumb title="异常" url="http://emacs.cn/tags/%E5%BC%82%E5%B8%B8/"/>
+              <breadCrumb title="异常" url="https://emacs.cn/tags/%E5%BC%82%E5%B8%B8/"/>
           
-              <breadCrumb title="技术" url="http://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+              <breadCrumb title="技术" url="https://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>
@@ -265,7 +265,7 @@
 
     
   <url>
-    <loc>http://emacs.cn/2014/12/nohup-sighup/</loc>
+    <loc>https://emacs.cn/2014/12/nohup-sighup/</loc>
     <lastmod>2017-07-27T11:06:24.000Z</lastmod>
     <data>
         <display>
@@ -273,11 +273,11 @@
         <pubTime>2014-12-26T03:30:46.000Z</pubTime>
         
          
-              <breadCrumb title="nohup" url="http://emacs.cn/tags/nohup/"/>
+              <breadCrumb title="nohup" url="https://emacs.cn/tags/nohup/"/>
           
-              <breadCrumb title="SIGHUP" url="http://emacs.cn/tags/SIGHUP/"/>
+              <breadCrumb title="SIGHUP" url="https://emacs.cn/tags/SIGHUP/"/>
           
-              <breadCrumb title="技术" url="http://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+              <breadCrumb title="技术" url="https://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>
@@ -285,7 +285,7 @@
 
     
   <url>
-    <loc>http://emacs.cn/2012/07/mongodb-basic-indexes-compound-indexes/</loc>
+    <loc>https://emacs.cn/2012/07/mongodb-basic-indexes-compound-indexes/</loc>
     <lastmod>2017-07-27T11:05:46.000Z</lastmod>
     <data>
         <display>
@@ -293,11 +293,11 @@
         <pubTime>2012-07-11T17:18:41.000Z</pubTime>
         
          
-              <breadCrumb title="MongoDB" url="http://emacs.cn/tags/MongoDB/"/>
+              <breadCrumb title="MongoDB" url="https://emacs.cn/tags/MongoDB/"/>
           
-              <breadCrumb title="索引" url="http://emacs.cn/tags/%E7%B4%A2%E5%BC%95/"/>
+              <breadCrumb title="索引" url="https://emacs.cn/tags/%E7%B4%A2%E5%BC%95/"/>
           
-              <breadCrumb title="技术" url="http://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+              <breadCrumb title="技术" url="https://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>
@@ -305,7 +305,7 @@
 
     
   <url>
-    <loc>http://emacs.cn/2014/12/howto-nodejs-atom-op-mongodb/</loc>
+    <loc>https://emacs.cn/2014/12/howto-nodejs-atom-op-mongodb/</loc>
     <lastmod>2017-07-27T11:05:34.000Z</lastmod>
     <data>
         <display>
@@ -313,13 +313,13 @@
         <pubTime>2014-12-21T12:47:06.000Z</pubTime>
         
          
-              <breadCrumb title="Node.js" url="http://emacs.cn/tags/Node-js/"/>
+              <breadCrumb title="Node.js" url="https://emacs.cn/tags/Node-js/"/>
           
-              <breadCrumb title="MongoDB" url="http://emacs.cn/tags/MongoDB/"/>
+              <breadCrumb title="MongoDB" url="https://emacs.cn/tags/MongoDB/"/>
           
-              <breadCrumb title="原子性" url="http://emacs.cn/tags/%E5%8E%9F%E5%AD%90%E6%80%A7/"/>
+              <breadCrumb title="原子性" url="https://emacs.cn/tags/%E5%8E%9F%E5%AD%90%E6%80%A7/"/>
           
-              <breadCrumb title="技术" url="http://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+              <breadCrumb title="技术" url="https://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>
@@ -327,7 +327,7 @@
 
     
   <url>
-    <loc>http://emacs.cn/2012/07/c-string-question/</loc>
+    <loc>https://emacs.cn/2012/07/c-string-question/</loc>
     <lastmod>2017-07-27T11:05:21.000Z</lastmod>
     <data>
         <display>
@@ -335,11 +335,11 @@
         <pubTime>2012-07-19T14:27:45.000Z</pubTime>
         
          
-              <breadCrumb title="C" url="http://emacs.cn/tags/C/"/>
+              <breadCrumb title="C" url="https://emacs.cn/tags/C/"/>
           
-              <breadCrumb title="字符串" url="http://emacs.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+              <breadCrumb title="字符串" url="https://emacs.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
           
-              <breadCrumb title="技术" url="http://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
+              <breadCrumb title="技术" url="https://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>

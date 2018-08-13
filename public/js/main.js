@@ -54,7 +54,7 @@ $(document).ready(function() {
   });
 });
 
-setShareData("http://www.vimer.me/images/favicon.ico");
+setShareData("https://emacs.cn/images/favicon.ico");
 function setShareData(imgUrl) {
    if (imgUrl) {
       var img = new Image();
