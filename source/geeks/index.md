@@ -20,4 +20,4 @@ https://github.com/InfoGeeker/geeks/wiki/Geeks-for-linux
 https://github.com/InfoGeeker/geeks/wiki/Geeks-for-tmux
 
 
-<center><font color='#a44a54' size='2px'>(转载文章请注明原文出处 <a href='http://vimer.me' style='font-color:#496b98'>More Than Vimer)</a></font></center>
+<center><font color='#a44a54' size='2px'>(转载文章请注明原文出处 <a href='https://emacs.cn' style='font-color:#496b98'>M疯)</a></font></center>

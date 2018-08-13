@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://emacs.cn/geeks/index.html</loc>
+    <lastmod>2018-08-13T12:33:04.103Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://emacs.cn/excellent-blogs/index.html</loc>
     <lastmod>2018-07-13T07:48:10.341Z</lastmod>
   </url>
@@ -99,11 +104,6 @@
   <url>
     <loc>http://emacs.cn/2012/07/c-string-question/</loc>
     <lastmod>2017-07-27T11:05:21.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://emacs.cn/geeks/index.html</loc>
-    <lastmod>2016-12-26T12:57:08.000Z</lastmod>
   </url>
   
   <url>
