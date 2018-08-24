@@ -35,5 +35,5 @@ B反问:"难道你非要他们天天加班，你才满意哈." ....
 
 始终相信，只要团队不散，一个项目即使失败，大不了再起一个项目. 
 
-![](http://ww2.sinaimg.cn/large/744e593bgw1erbawp9g2ij20di04v3z4.jpg)
+![](https://img.emacs.cn/20180824111842.jpg)
 

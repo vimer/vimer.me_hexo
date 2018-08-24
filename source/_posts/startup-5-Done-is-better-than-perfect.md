@@ -22,7 +22,7 @@ categories: 创业路
 
 这里要感谢下Teambition，强烈推荐。
 
- ![Task](http://ww3.sinaimg.cn/large/744e593bgw1ew24dc3jz5j214i0kowh8.jpg)
+ ![Task](https://img.emacs.cn/20180824111817.jpg)
 
 正常来说，我把任务版分成近期任务，本周任务，今日·未完成，今日·进行中，已完成
 
@@ -70,7 +70,7 @@ No Data, No future. 如何利用现有的数据，让数据更好的服务于你
 
 不管怎么样，加油，每一天都是新的一天。
 
-![NewDay](http://ww4.sinaimg.cn/large/744e593bgw1ew26tpsdw3j20zk0qo40t.jpg)
+![NewDay](https://img.emacs.cn/20180824111842.jpg)
 
 
 

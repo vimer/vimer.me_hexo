@@ -7,9 +7,9 @@ categories: 创业路
 14年末的时候，也就是情人节和新年快到的时候，我们也是脑袋一拍，制作个新年手写送祝福如何 ? 几个人稍微讨论下，我就开始写了，一个人大概断断续续花了两周时间(创业就是这样, 期间还有其他事情，永远不可能纯粹)， 最后上线的时候通宵了两晚，终于上线了. 
 <!--more-->
 
-<img src='http://ww2.sinaimg.cn/large/744e593bgw1er1ku109xkj20hs0vkdhb.jpg' width='50%' height='80%'>
-<img src='http://ww4.sinaimg.cn/large/744e593bgw1er1ktduayoj20hs0vktaq.jpg' width='50%' height='80%'>
-<img src='http://ww2.sinaimg.cn/large/744e593bgw1er1lapv0cdj20hs0vk0vx.jpg' width='50%' height='80%'>
+<img src='https://img.emacs.cn/20180824112043.jpg' width='50%' height='80%'>
+<img src='https://img.emacs.cn/20180824112100.jpg' width='50%' height='80%'>
+<img src='https://img.emacs.cn/20180824112107.jpg' width='50%' height='80%'>
 
 javascript模拟毛笔字核心算法已开源:
 [handWritingWithJS](https://github.com/vimer/handWritingWithJS)
