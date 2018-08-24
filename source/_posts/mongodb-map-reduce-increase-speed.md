@@ -7,7 +7,7 @@ categories: 技术
 想要优化Map-reduce就要深入理解其原理.
 Map-Reduce基本原理请见下图:
 
-![Map-Reduce基本原理](http://okf337562.bkt.clouddn.com/map-reduce.jpg)
+![Map-Reduce基本原理](https://img.emacs.cn/20180824110651.png)
 
 <!--more-->
 
