@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://emacs.cn/2015/01/mongodb-map-reduce-increase-speed/</loc>
+    <lastmod>2018-08-24T03:07:40.959Z</lastmod>
+  </url>
+  
+  <url>
     <loc>https://emacs.cn/2017/08/mysql-transaction-deadlock/</loc>
     <lastmod>2018-08-24T03:03:43.612Z</lastmod>
   </url>
@@ -24,11 +29,6 @@
   <url>
     <loc>https://emacs.cn/2015/05/dynamic-branch-prediction/</loc>
     <lastmod>2017-08-07T10:41:54.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emacs.cn/2015/01/mongodb-map-reduce-increase-speed/</loc>
-    <lastmod>2017-08-05T16:27:12.000Z</lastmod>
   </url>
   
   <url>

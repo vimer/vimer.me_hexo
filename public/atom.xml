@@ -4,7 +4,7 @@
   <subtitle><![CDATA[基础·极致·分享]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://emacs.cn/"/>
-  <updated>2018-08-24T03:03:52.825Z</updated>
+  <updated>2018-08-24T03:07:50.832Z</updated>
   <id>https://emacs.cn/</id>
   
   <author>
@@ -884,9 +884,9 @@ int main()
     <link href="https://emacs.cn/2015/01/mongodb-map-reduce-increase-speed/"/>
     <id>https://emacs.cn/2015/01/mongodb-map-reduce-increase-speed/</id>
     <published>2015-01-18T04:07:42.000Z</published>
-    <updated>2017-08-05T16:27:12.000Z</updated>
+    <updated>2018-08-24T03:07:40.959Z</updated>
     <content type="html"><![CDATA[<p>想要优化Map-reduce就要深入理解其原理.<br>Map-Reduce基本原理请见下图:</p>
-<p><img src="http://okf337562.bkt.clouddn.com/map-reduce.jpg" alt="Map-Reduce基本原理"></p>
+<p><img src="https://img.emacs.cn/20180824110651.png" alt="Map-Reduce基本原理"></p>
 <a id="more"></a>
 <p>整个数据处理流程可以参见官方上图,先对要进行处理的数据进行Query,然后针对Query的数据进行map,最后针对map的数据进行reduce.</p>
 <p>简单了解之后,我们这里取一个例子熟悉下整个过程:</p>
@@ -988,7 +988,7 @@ var reduce = function(key, values) {
 ]]></content>
     <summary type="html">
     <![CDATA[<p>想要优化Map-reduce就要深入理解其原理.<br>Map-Reduce基本原理请见下图:</p>
-<p><img src="http://okf337562.bkt.clouddn.com/map-reduce.jpg" alt="Map-Reduce基本原理"></p>
+<p><img src="https://img.emacs.cn/20180824110651.png" alt="Map-Reduce基本原理"></p>
 ]]>
     
     </summary>
