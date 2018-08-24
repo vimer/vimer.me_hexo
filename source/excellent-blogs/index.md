@@ -38,5 +38,5 @@
 
 ---
 
-#### [邪恶二进制](http://emacs.cn/)
+#### [邪恶二进制](http://evilbinary.org/)
 > Geek一枚
