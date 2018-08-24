@@ -71,7 +71,7 @@ db.good.ensureIndex({x:1,y:1})
 
 让我们配合PPT看下 nscanned:7是怎么来的:
 
-![BTree](http://ww3.sinaimg.cn/large/744e593bgw1end6qzl43vj20fy09t0ta.jpg)
+![BTree](https://img.emacs.cn/20180824111458.jpg)
 
 这是MongoDB的B-tree索引树,因为x>=4 && y=’c’,所以先选择左枝搜索,左枝搜索了4/g 和 5/c ,(5/c符合条件),然后搜索 右枝 搜索了 7/e, 6/a ,8/c, 9/f ,(8/c符合条件). 任何 符合的 x都要被check一下.
 

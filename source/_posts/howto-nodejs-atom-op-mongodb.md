@@ -45,7 +45,7 @@ co(function* () {
 
 上面的程序同时开两个,多个进程同时操作一个数据.
 可能结果会是:
-![多进程操作Mongo](http://ww1.sinaimg.cn/large/744e593bgw1enhm3w6525j20wo0n6459.jpg)
+![多进程操作Mongo](https://img.emacs.cn/20180824111303.jpg)
 
 我们知道Mongo是不支持事务的,如果你能容忍上面的弱一致性,那么没问题.但是如果你不能容忍，要么考虑MySql关系型数据库,要么自己解决事务问题.
 
@@ -71,4 +71,4 @@ co(function* () {
 
 下面就是我们想要的结果:)
 
-![原子性控制](http://ww1.sinaimg.cn/large/744e593bgw1enhm5tgq6qj20xt0njqbo.jpg)
+![原子性控制](https://img.emacs.cn/20180824111410.jpg)

@@ -6,7 +6,7 @@ categories: 技术
 为什么这篇文章会提到nohup呢,主要还是最近在使用了一个叫maptail东西,它可以根据nginx的日志中IP来把IP和具体地址进行转换并显示在中国地图上.这样可以实时的查看接口的调用情况.
 
 <!--more-->
-![24pi_maptail](http://ww3.sinaimg.cn/large/744e593bgw1enmxnoxfulj20kk0fr41o.jpg)
+![24pi_maptail](https://img.emacs.cn/20180824111120.jpg)
 
 这里不讨论maptail,主要说得是maptail启用方式: 
 <pre>
@@ -27,11 +27,11 @@ tail -f 1 &
 
 这样放入后台后,通过进程树可以看到
 
-![tail进程树](http://ww1.sinaimg.cn/large/744e593bgw1enmy7tgiutj209q02sjrj.jpg)
+![tail进程树](https://img.emacs.cn/20180824111151.jpg)
 这个tail进程挂接在bash父进程上.
 
 我们exit退出当前shell.再次进去看下:
-![tail进程树](http://ww4.sinaimg.cn/large/744e593bgw1enmycasfnbj203f060wej.jpg)
+![tail进程树](https://img.emacs.cn/20180824111206.jpg)
 可见它被init进程来接管.
 
 也就是这个进程运行正常,没什么问题.
