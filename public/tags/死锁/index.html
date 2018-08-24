@@ -153,7 +153,7 @@
       <h2 class="post-list__post-title post-title"><a href="/2017/08/mysql-transaction-deadlock/" title="link to MySql InnoDB事务死锁问题">MySql InnoDB事务死锁问题</a></h2>
         <time datetime="8月5 2017" class="post-list__meta--date date">8月5 2017</time>
       <p class="excerpt">
-        <p>这篇博客的文章内容发生于某天晚上服务端日志报了一大堆 Deadlock found when trying to get lock; try restarting transaction，当时通过字面意思果断可以判断出是Sql事务死锁了，与此同时，MySql所在服务器CPU也远超100%，第一直觉是事务死锁导致线程阻塞，请求数瞬间过多导致CPU超100%。<br><img style="float:right" src="http://okf337562.bkt.clouddn.com/figure/deadlock.jpg" width="50%" height="50%"><br>什么情况下会导致死锁呢？根据以往经验，应该是同时操作了（update/delete等）同一条数据库的记录导致了事务阻塞，由于事务的执行时间过长导致了其他事务的等待，导致CPU攀高。</p>
+        <p>这篇博客的文章内容发生于某天晚上服务端日志报了一大堆 Deadlock found when trying to get lock; try restarting transaction，当时通过字面意思果断可以判断出是Sql事务死锁了，与此同时，MySql所在服务器CPU也远超100%，第一直觉是事务死锁导致线程阻塞，请求数瞬间过多导致CPU超100%。<br><img style="float:right" src="https://img.emacs.cn/20180824110118.jpg" width="50%" height="50%"><br>什么情况下会导致死锁呢？根据以往经验，应该是同时操作了（update/delete等）同一条数据库的记录导致了事务阻塞，由于事务的执行时间过长导致了其他事务的等待，导致CPU攀高。</p>
 <p>死锁这个问题基本上可以说涉及了InnoDB大部分特性：行锁设计，非锁定读，事务，MVCC，聚簇索引 等等，有必要写篇文章好好分析下。</p>
 
       </p>

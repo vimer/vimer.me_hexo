@@ -2,25 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     
-    
-    
-  <url>
-    <loc>https://emacs.cn/2017/09/git/</loc>
-    <lastmod>2017-09-20T07:15:19.000Z</lastmod>
-    <data>
-        <display>
-        <title></title>
-        <pubTime>2017-09-20T07:15:19.000Z</pubTime>
-        
-         
-        </display>
-    </data>
-    </url>
-
-    
   <url>
     <loc>https://emacs.cn/2017/08/mysql-transaction-deadlock/</loc>
-    <lastmod>2017-08-10T14:30:49.000Z</lastmod>
+    <lastmod>2018-08-24T03:03:43.612Z</lastmod>
     <data>
         <display>
         <title>MySql InnoDB事务死锁问题</title>
@@ -35,6 +19,22 @@
           
               <breadCrumb title="技术" url="https://emacs.cn/categories/%E6%8A%80%E6%9C%AF/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
+    <loc>https://emacs.cn/2017/09/git/</loc>
+    <lastmod>2017-09-20T07:15:19.000Z</lastmod>
+    <data>
+        <display>
+        <title></title>
+        <pubTime>2017-09-20T07:15:19.000Z</pubTime>
+        
+         
         </display>
     </data>
     </url>
