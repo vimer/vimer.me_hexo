@@ -214,7 +214,7 @@ db.good.ensureIndex({x:1,y:1})
 </blockquote>
 <p>这里nscanned可以认为是扫描的记录数.n为返回的记录数</p>
 <p>让我们配合PPT看下 nscanned:7是怎么来的:</p>
-<p><img src="http://ww3.sinaimg.cn/large/744e593bgw1end6qzl43vj20fy09t0ta.jpg" alt="BTree"></p>
+<p><img src="https://img.emacs.cn/20180824111458.jpg" alt="BTree"></p>
 <p>这是MongoDB的B-tree索引树,因为x&gt;=4 &amp;&amp; y=’c’,所以先选择左枝搜索,左枝搜索了4/g 和 5/c ,(5/c符合条件),然后搜索 右枝 搜索了 7/e, 6/a ,8/c, 9/f ,(8/c符合条件). 任何 符合的 x都要被check一下.</p>
 <p>###延伸</p>
 <p>看了PPT后到此结尾了, 真遇到这种情况,效率可不乐观,于是稍微思考了下, y 在 这颗树中只有两个节点含有,也就是说 既然是 ‘与’  那就只要先把 y 筛选出来 ,搜索次数就大大减半了 .</p>

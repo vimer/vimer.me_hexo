@@ -185,7 +185,7 @@ co(function* () {
 </code>
 </pre>
 
-<p>上面的程序同时开两个,多个进程同时操作一个数据.<br>可能结果会是:<br><img src="http://ww1.sinaimg.cn/large/744e593bgw1enhm3w6525j20wo0n6459.jpg" alt="多进程操作Mongo"></p>
+<p>上面的程序同时开两个,多个进程同时操作一个数据.<br>可能结果会是:<br><img src="https://img.emacs.cn/20180824111303.jpg" alt="多进程操作Mongo"></p>
 <p>我们知道Mongo是不支持事务的,如果你能容忍上面的弱一致性,那么没问题.但是如果你不能容忍，要么考虑MySql关系型数据库,要么自己解决事务问题.</p>
 <p>下面我来说下基于Mongo怎么解决事务问题.<br>我们需要对每个数据加一个version来控制.直接上代码:</p>
 <pre>
@@ -207,7 +207,7 @@ co(function* () {
 </pre>
 
 <p>下面就是我们想要的结果:)</p>
-<p><img src="http://ww1.sinaimg.cn/large/744e593bgw1enhm5tgq6qj20xt0njqbo.jpg" alt="原子性控制"></p>
+<p><img src="https://img.emacs.cn/20180824111410.jpg" alt="原子性控制"></p>
 
   </section>
   <br>
